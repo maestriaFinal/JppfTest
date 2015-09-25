@@ -1,0 +1,40 @@
+ENHANCED IMPACT ANALYSIS SYSTEM (LIMITED EDITION)
+Powered by JAVA 1.5.0_06. ORACLE JDEVELOPER
+
+Generated on September 16, 2015 12:09:14 PM GMT-05:00 by LCEDENO
+
+EIAS(PKG_MB620000PR).txt
+
+
+OBJECT OWNER   	OBJECT TYPE    	OBJECT NAME         
+---------------	---------------	--------------------
+
+EVTMS          	TRIGGER        	BR_A_U_S_PEN_IND    
+EVTMS          	TRIGGER        	SBI_A_I_S_OSAS      
+EVTMS          	PROCEDURE      	SP_MB8133RP         
+EVTMS          	PROCEDURE      	SP_GEN_OMS_BOFR_CANCEL_CHRG
+EVTMS          	FUNCTION       	SF_GET_OMS_TAR_NO   
+EVTMS          	FUNCTION       	SF_GET_OMS_INFO     
+EVTMS          	FUNCTION       	SF_GET_OMS_AMOUNT   
+EVTMS          	PACKAGE BODY   	PKG_TOLL_CHARGES    
+EVTMS          	PACKAGE        	PKG_TOLL_CHARGES    
+EVTMS          	PACKAGE BODY   	PKG_MB621000PR      
+EVTMS          	PACKAGE        	PKG_MB620000PR      
+EVTMS          	PACKAGE BODY   	PKG_MB620000PR      
+EVTMS          	PACKAGE BODY   	PKG_MB141100PR_PCC  
+EVTMS          	PACKAGE BODY   	PKG_MB141100PR      
+EVTMS          	PACKAGE        	PKG_BOOKING         
+EVTMS          	PACKAGE BODY   	PKG_CHRG_MANAGEMENT 
+EVTMS          	PACKAGE BODY   	PKG_BOOKING         
+EVTMS          	PACKAGE BODY   	PKG_API_BILLING     
+
+
+MODULE NAME              	OBJECT TYPE              	OBJECT NAME                        	LEVEL                              
+---------------          	-------------------------	-----------------------------------	-----------------------------------
+
+MB1320FM.fmb             	PACKAGE BODY             	PKG_GET_INFO                       	FORM                               
+MB8204FM.fmb             	PACKAGE BODY             	PKG_SVC_UTIL                       	FORM                               
+VI3110FM.fmb             	FUNCTION                 	MF_GET_FEE                         	FORM                               
+VI3110FM.fmb             	PROCEDURE                	PF_DISPLAY_CANCEL_FEES             	FORM                               
+VI3110FM.fmb             	PROCEDURE                	PF_DISPLAY_RATES                   	FORM                               
+VI3110FM.fmb             	PROCEDURE                	PF_DISPLAY_RATES_2                 	FORM                               
