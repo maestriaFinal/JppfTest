@@ -1,0 +1,26 @@
+2015-10-05 09:50:10,884 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(80)]: --------------------------------------------------------------------------------
+2015-10-05 09:50:10,887 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(81)]: JPPF Version: 5.0, Build number: 1452, Build date: 2015-03-01 07:02 CET
+2015-10-05 09:50:10,887 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(82)]: starting node with PID=6416, UUID=9FB2439B-1319-28B9-90A7-3B44596BBD15
+2015-10-05 09:50:10,887 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(83)]: --------------------------------------------------------------------------------
+2015-10-05 09:50:12,359 [INFO ][org.jppf.classloader.ClassLoaderRequestHandler.run(155)]: maxBatchSize = 1
+2015-10-05 09:50:12,381 [INFO ][org.jppf.execute.AbstractExecutionManager.<init>(116)]: running 8 processing threads
+2015-10-05 09:50:12,381 [INFO ][org.jppf.execute.AbstractExecutionManager.createThreadManager(142)]: Using default thread manager
+2015-10-05 10:26:42,813 [ERROR][org.jppf.server.node.JPPFNode.run(143)]: Connection reset
+java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.fill(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.DataInputStream.readInt(Unknown Source)
+	at org.jppf.comm.socket.AbstractSocketWrapper.readInt(AbstractSocketWrapper.java:257)
+	at org.jppf.io.SocketWrapperInputSource.readInt(SocketWrapperInputSource.java:94)
+	at org.jppf.io.IOHelper.readData(IOHelper.java:119)
+	at org.jppf.io.IOHelper.unwrappedData(IOHelper.java:197)
+	at org.jppf.server.node.remote.RemoteNodeIO.deserializeObjects(RemoteNodeIO.java:64)
+	at org.jppf.server.node.AbstractNodeIO.readObjects(AbstractNodeIO.java:107)
+	at org.jppf.server.node.AbstractNodeIO.readTask(AbstractNodeIO.java:81)
+	at org.jppf.server.node.JPPFNode.processNextJob(JPPFNode.java:189)
+	at org.jppf.server.node.JPPFNode.perform(JPPFNode.java:175)
+	at org.jppf.server.node.JPPFNode.run(JPPFNode.java:138)
+	at org.jppf.node.NodeRunner.main(NodeRunner.java:137)
+2015-10-05 10:26:42,822 [WARN ][org.jppf.classloader.AbstractClassLoaderConnection.sendCloseChannelCommand(105)]: error sending close channel command : java.net.SocketException: Connection reset by peer: socket write error

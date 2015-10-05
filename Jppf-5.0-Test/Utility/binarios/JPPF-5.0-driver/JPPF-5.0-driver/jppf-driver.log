@@ -1,0 +1,6 @@
+2015-10-05 09:49:36,924 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(80)]: --------------------------------------------------------------------------------
+2015-10-05 09:49:36,925 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(81)]: JPPF Version: 5.0, Build number: 1452, Build date: 2015-03-01 07:02 CET
+2015-10-05 09:49:36,926 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(82)]: starting driver with PID=9176, UUID=1DCF19C0-192F-5EF9-F35A-F7D3BC85EAF0
+2015-10-05 09:49:36,926 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(83)]: --------------------------------------------------------------------------------
+2015-10-05 09:49:37,862 [INFO ][org.jppf.nio.NioConstants.getCheckConnection(83)]: NIO checks are enabled
+2015-10-05 09:49:37,864 [INFO ][org.jppf.nio.StateTransitionManager.initExecutor(288)]: globalExecutor=java.util.concurrent.ThreadPoolExecutor@455f1fa0[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], maxSize=8

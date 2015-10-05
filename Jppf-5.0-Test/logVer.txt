@@ -1,0 +1,390 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building jppf-5.0-Test 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> exec-maven-plugin:1.2.1:java (default-cli) > validate @ Jppf-5.0-Test >>>
+[INFO] 
+[INFO] <<< exec-maven-plugin:1.2.1:java (default-cli) < validate @ Jppf-5.0-Test <<<
+[INFO] 
+[INFO] --- exec-maven-plugin:1.2.1:java (default-cli) @ Jppf-5.0-Test ---
+10:16:34.117 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG org.jppf.utils.JPPFConfiguration - reading JPPF configuration file: jppf.properties
+10:16:34.123 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG org.jppf.client.AbstractJPPFClient - Instantiating JPPF client with uuid=BEDE9CA9-8DBE-EA54-FCC2-3E606882A9F5
+10:16:34.171 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG org.jppf.utils.NetworkUtils - process name=7904@TIRE-WKS-345494, pid=7904
+10:16:34.171 [org.jppf.application.template.TemplateApplicationRunner.main()] INFO  org.jppf.utils.VersionUtils - --------------------------------------------------------------------------------
+10:16:34.172 [org.jppf.application.template.TemplateApplicationRunner.main()] INFO  org.jppf.utils.VersionUtils - JPPF Version: 5.0, Build number: 1452, Build date: 2015-03-01 07:02 CET
+10:16:34.172 [org.jppf.application.template.TemplateApplicationRunner.main()] INFO  org.jppf.utils.VersionUtils - starting client with PID=7904, UUID=BEDE9CA9-8DBE-EA54-FCC2-3E606882A9F5
+10:16:34.172 [org.jppf.application.template.TemplateApplicationRunner.main()] INFO  org.jppf.utils.VersionUtils - --------------------------------------------------------------------------------
+10:16:34.172 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG org.jppf.utils.NetworkUtils - process name=7904@TIRE-WKS-345494, pid=7904
+client process id: 7904, uuid: BEDE9CA9-8DBE-EA54-FCC2-3E606882A9F5
+10:16:34.176 [InitPools] DEBUG o.jppf.client.AbstractGenericClient - initializing connections
+10:16:34.177 [InitPools] DEBUG o.jppf.client.AbstractGenericClient - initializing connections from discovery with priority = 0 and acceptMultipleInterfaces = false
+10:16:34.181 [InitPools] DEBUG o.jppf.client.AbstractGenericClient - found peers in the configuration
+10:16:34.181 [InitPools] DEBUG o.jppf.client.AbstractGenericClient - list of drivers: default-driver
+10:16:34.183 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG org.jppf.client.JPPFClient - submitting job JPPFJob[name=Template blocking job, uuid=5ED4C999-C3CE-0EDB-69B0-9F93991DFC22, blocking=true, nbTasks=1, nbResults=0, jobSLA=org.jppf.node.protocol.JPPFJobSLA@7acdff36]
+10:16:34.190 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.l.b.spi.JPPFBundlerFactory - using default properties: CLIENT{jppf.load.balancing.profile.jppf.size=1000000, jppf.load.balancing.algorithm=manual, jppf.script.default.language=javascript, jppf.load.balancing.profile=jppf}
+10:16:34.190 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.l.b.spi.JPPFBundlerFactory - load balancing configuration using algorithm 'manual' with parameters: {size=1000000}
+10:16:34.190 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.l.b.spi.JPPFBundlerFactory - oldCL=java.net.URLClassLoader@78fcc563, currentCL=java.net.URLClassLoader@78fcc563
+10:16:34.193 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.l.b.spi.JPPFBundlerFactory - registering new load-balancing algorithm provider 'rl'
+10:16:34.193 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.l.b.spi.JPPFBundlerFactory - registering new load-balancing algorithm provider 'proportional'
+10:16:34.193 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.l.b.spi.JPPFBundlerFactory - registering new load-balancing algorithm provider 'autotuned'
+10:16:34.193 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.l.b.spi.JPPFBundlerFactory - registering new load-balancing algorithm provider 'manual'
+10:16:34.193 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.l.b.spi.JPPFBundlerFactory - registering new load-balancing algorithm provider 'nodethreads'
+10:16:34.193 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.l.b.spi.JPPFBundlerFactory - found 5 load-balancing algorithms in the classpath
+10:16:34.197 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.scheduling.JPPFScheduleHandler - created executor with name=Job Schedule Handler
+10:16:34.197 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.scheduling.JPPFScheduleHandler - created executor with name=Job Expiration Handler
+10:16:34.201 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.balancer.AbstractClientJob - creating ClientJob #1
+10:16:34.203 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG org.jppf.client.JPPFResultCollector - job [5ED4C999-C3CE-0EDB-69B0-9F93991DFC22] status changing from 'SUBMITTED' to 'PENDING'
+10:16:34.203 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG org.jppf.client.JPPFResultCollector - job [5ED4C999-C3CE-0EDB-69B0-9F93991DFC22] fire status changed event for 'PENDING'
+10:16:34.203 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.b.queue.JPPFPriorityQueue - adding bundle with ClientJob[job=JPPFJob[name=Template blocking job, uuid=5ED4C999-C3CE-0EDB-69B0-9F93991DFC22, blocking=true, nbTasks=1, nbResults=0, jobSLA=org.jppf.node.protocol.JPPFJobSLA@7acdff36], jobStatus=PENDING, broadcastUUID=null, executing=false, nbTasks=1]
+10:16:34.204 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.b.queue.JPPFPriorityQueue - Maps size information: priorityMap[shallow size=1, total elements=1] - sizeMap[shallow size=1, total elements=1]
+10:16:34.233 [Thread-1] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:lo (Software Loopback Interface 1)
+10:16:34.234 [Thread-1] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:net4 (Microsoft ISATAP Adapter)
+10:16:34.234 [Thread-1] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:eth4 (Intel(R) Ethernet Connection I217-LM #2)
+10:16:34.234 [Thread-1] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:eth6 (VirtualBox Host-Only Ethernet Adapter)
+10:16:34.234 [Thread-1] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:net6 (Microsoft ISATAP Adapter #2)
+10:16:34.284 [Thread-1] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:lo (Software Loopback Interface 1)
+10:16:34.284 [Thread-1] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:net4 (Microsoft ISATAP Adapter)
+10:16:34.284 [Thread-1] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:eth4 (Intel(R) Ethernet Connection I217-LM #2)
+10:16:34.285 [Thread-1] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:eth6 (VirtualBox Host-Only Ethernet Adapter)
+10:16:34.285 [Thread-1] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:net6 (Microsoft ISATAP Adapter #2)
+10:16:34.285 [Thread-1] DEBUG o.j.c.d.JPPFMulticastReceiver - Found 2 addresses: 10.106.32.93 192.168.56.1
+10:16:34.415 [Receiver@10.106.32.93:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:16:34.415 [Receiver@192.168.56.1:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:16:34.417 [Thread-1] DEBUG o.j.c.JPPFMulticastReceiverThread - Found connection information: JPPFConnectionInformation[uuid=1DCF19C0-192F-5EF9-F35A-F7D3BC85EAF0, host=10.106.32.93, managementPort=11198, recoveryPort=-1, serverPorts=11111, sslServerPorts=11443]
+10:16:34.418 [Thread-1] DEBUG o.jppf.client.AbstractGenericClient - new connection: jppf_discovery-1
+10:16:34.425 [JPPF Client-0001] DEBUG o.jppf.client.AbstractGenericClient - '10.106.32.93' was resolved into 'TIRE-WKS-345494.canal.acp'
+10:16:34.434 [JPPF Client-0001] DEBUG o.jppf.client.AbstractConnectionPool - adding jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : CREATED to JPPFConnectionPool[name=jppf_discovery-1, id=1, coreSize=1, maxSize=1, priority=0, sslEnabled=false, client=org.jppf.client.JPPFClient@349685ab]
+10:16:34.446 [JPPF Client-0001] DEBUG o.j.s.JPPFSerialization$Factory - found jppf.object.serialization.class = null
+10:16:34.446 [JPPF Client-0001] DEBUG o.j.s.JPPFSerialization$Factory - using DefaultJavaSerialization
+10:16:34.447 [JPPF Client-0001] DEBUG o.jppf.client.AbstractConnectionPool - adding JMXDriverConnectionWrapper[url=service:jmx:jmxmp://10.106.32.93:11198, connected=false, local=false, secure=false] to JMXConnectionPool[coreSize=1, maxSize=1, connectionCount=0, coreConnections=0]
+10:16:34.448 [JPPF Client-0001] INFO  o.jppf.client.AbstractGenericClient - connection [jppf_discovery-1-1] created
+10:16:34.448 [JPPF Client-0001] DEBUG o.j.c.AbstractJPPFClientConnection - connection 'jppf_discovery-1-1' status changing from CREATED to NEW
+10:16:34.448 [jmx@10.106.32.93:11198] DEBUG o.j.management.JMXConnectionThread - 10.106.32.93:11198 about to perform connection attempts
+10:16:34.449 [JPPF Client-0002] DEBUG o.jppf.client.ConnectionInitializer - initializing driver connection 'jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : NEW'
+10:16:34.449 [JPPF Client-0001] DEBUG o.j.client.balancer.JobManagerClient - adding connection jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : NEW
+10:16:34.451 [JPPF Client-0002] DEBUG o.j.c.ResourceProvider$Factory - jppf.resource.provider.class = org.jppf.classloader.ResourceProviderImpl
+10:16:34.452 [JPPF Client-0002] DEBUG o.j.c.AbstractClassServerDelegate - resourceProvider=org.jppf.classloader.ResourceProviderImpl@4cc98ecb
+10:16:34.452 [JPPF Client-0002] DEBUG o.j.c.AbstractClientConnectionHandler - connection 'jppf_discovery-1-1 - ClassServer' status changing from NEW to CONNECTING
+[client: jppf_discovery-1-1 - ClassServer] Attempting connection to the class server at TIRE-WKS-345494.canal.acp:11111
+10:16:34.453 [JPPF Client-0002] INFO  o.j.client.ClassServerDelegateImpl - [client: jppf_discovery-1-1 - ClassServer] Attempting connection to the class server at TIRE-WKS-345494.canal.acp:11111
+10:16:34.453 [JPPF Client-0002] DEBUG o.j.c.socket.SocketInitializerImpl - SocketInitializerImpl[TIRE-WKS-345494.canal.acp:11111] about to close socket wrapper
+10:16:34.470 [jmx@10.106.32.93:11198] DEBUG o.j.management.JMXConnectionWrapper - 10.106.32.93:11198 JMX connection successfully established
+10:16:34.470 [jmx@10.106.32.93:11198] DEBUG o.j.management.JMXConnectionThread - 10.106.32.93:11198 about to suspend connection attempts
+10:16:34.501 [JPPF Client-0001] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:lo (Software Loopback Interface 1)
+10:16:34.501 [JPPF Client-0001] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:net4 (Microsoft ISATAP Adapter)
+10:16:34.501 [JPPF Client-0001] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:eth4 (Intel(R) Ethernet Connection I217-LM #2)
+10:16:34.501 [JPPF Client-0001] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:eth6 (VirtualBox Host-Only Ethernet Adapter)
+10:16:34.501 [JPPF Client-0001] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:net6 (Microsoft ISATAP Adapter #2)
+10:16:34.549 [JPPF Client-0001] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:lo (Software Loopback Interface 1)
+10:16:34.549 [JPPF Client-0001] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:net4 (Microsoft ISATAP Adapter)
+10:16:34.549 [JPPF Client-0001] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:eth4 (Intel(R) Ethernet Connection I217-LM #2)
+10:16:34.549 [JPPF Client-0001] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:eth6 (VirtualBox Host-Only Ethernet Adapter)
+10:16:34.549 [JPPF Client-0001] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:net6 (Microsoft ISATAP Adapter #2)
+10:16:35.400 [Receiver@10.106.32.93:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:16:35.400 [Receiver@192.168.56.1:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:16:35.460 [JPPF Client-0002] DEBUG o.j.c.socket.AbstractSocketWrapper - getReceiveBufferSize() = 32768
+[client: jppf_discovery-1-1 - ClassServer] Reconnected to the class server
+10:16:35.461 [JPPF Client-0002] INFO  o.j.client.ClassServerDelegateImpl - [client: jppf_discovery-1-1 - ClassServer] Reconnected to the class server
+10:16:35.461 [JPPF Client-0002] DEBUG o.j.c.AbstractClientConnectionHandler - connection 'jppf_discovery-1-1 - ClassServer' status changing from CONNECTING to ACTIVE
+10:16:35.462 [JPPF Client-0002] DEBUG o.j.c.AbstractClientConnectionHandler - connection 'jppf_discovery-1-1 - TasksServer' status changing from NEW to CONNECTING
+10:16:35.462 [JPPF Client-0002] DEBUG o.j.c.AbstractJPPFClientConnection - connection 'jppf_discovery-1-1' status changing from NEW to CONNECTING
+10:16:35.462 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] : sending channel identifier
+10:16:35.463 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] : sending initial resource
+10:16:35.480 [jppf_discovery-1-1 - ClassServer] DEBUG org.jppf.io.IOHelper - Loaded serializer class class org.jppf.utils.ObjectSerializerImpl
+10:16:35.498 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] data sent to the server
+10:16:35.498 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] reading next resource ...
+10:16:35.505 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] : server handshake done
+10:16:35.506 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] reading next resource ...
+10:16:36.399 [Receiver@10.106.32.93:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:16:36.400 [Receiver@192.168.56.1:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:16:37.400 [Receiver@10.106.32.93:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:16:37.400 [Receiver@192.168.56.1:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:16:38.401 [Receiver@10.106.32.93:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:16:38.401 [Receiver@192.168.56.1:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:16:39.401 [Receiver@10.106.32.93:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:16:39.401 [Receiver@192.168.56.1:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:16:40.401 [Receiver@192.168.56.1:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:16:40.401 [Receiver@10.106.32.93:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:16:41.323 [JPPF Client-0001] DEBUG o.j.client.balancer.JobManagerClient - end of adding connection jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : CONNECTING
+10:16:41.324 [JPPF Client-0001] DEBUG o.jppf.client.AbstractGenericClient - end of connection [jppf_discovery-1-1] created
+[client: jppf_discovery-1-1 - TasksServer] Attempting connection to the task server at TIRE-WKS-345494.canal.acp:11111
+10:16:41.324 [JPPF Client-0002] DEBUG o.j.c.TaskServerConnectionHandler - [client: jppf_discovery-1-1 - TasksServer] Attempting connection to the task server at TIRE-WKS-345494.canal.acp:11111
+10:16:41.324 [JPPF Client-0002] DEBUG o.j.c.socket.SocketInitializerImpl - SocketInitializerImpl[TIRE-WKS-345494.canal.acp:11111] about to close socket wrapper
+10:16:41.401 [Receiver@10.106.32.93:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:16:41.401 [Receiver@192.168.56.1:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:16:42.325 [JPPF Client-0002] DEBUG o.j.c.socket.AbstractSocketWrapper - getReceiveBufferSize() = 32768
+10:16:42.325 [JPPF Client-0002] DEBUG o.j.c.TaskServerConnectionHandler - sending JPPF identifier
+10:16:42.329 [JPPF Client-0002] DEBUG o.j.client.BaseJPPFClientConnection - JPPFClientConnectionImpl[connectionUuid=BEDE9CA9-8DBE-EA54-FCC2-3E606882A9F5_1, status=CONNECTING] sending handshake job, uuidPath=TraversalList[position=-1, list=[BEDE9CA9-8DBE-EA54-FCC2-3E606882A9F5]]
+10:16:42.356 [JPPF Client-0002] DEBUG o.j.client.BaseJPPFClientConnection - JPPFClientConnectionImpl[connectionUuid=BEDE9CA9-8DBE-EA54-FCC2-3E606882A9F5_1, status=CONNECTING] : received bundle JPPFTaskBundle[name=handshake job, uuid=handshake job, initialTaskCount=0, taskCount=0, bundleUuid=null, uuidPath=TraversalList[position=0, list=[BEDE9CA9-8DBE-EA54-FCC2-3E606882A9F5, 1DCF19C0-192F-5EF9-F35A-F7D3BC85EAF0]]], positions=
+[client: jppf_discovery-1-1 - TasksServer] Reconnected to the JPPF task server
+10:16:42.356 [JPPF Client-0002] DEBUG o.j.c.TaskServerConnectionHandler - [client: jppf_discovery-1-1 - TasksServer] Reconnected to the JPPF task server
+10:16:42.356 [JPPF Client-0002] DEBUG o.j.c.AbstractClientConnectionHandler - connection 'jppf_discovery-1-1 - TasksServer' status changing from CONNECTING to ACTIVE
+10:16:42.356 [JPPF Client-0002] DEBUG o.j.c.AbstractJPPFClientConnection - connection 'jppf_discovery-1-1' status changing from CONNECTING to ACTIVE
+10:16:42.357 [JPPF Client-0002] DEBUG o.j.client.JPPFClientConnectionImpl - connection [jppf_discovery-1-1] status=ACTIVE
+10:16:42.357 [TaskQueueChecker] DEBUG o.j.c.b.queue.TaskQueueChecker - 1 channels idle
+10:16:42.357 [JPPF Client-0002] DEBUG org.jppf.client.AbstractJPPFClient - adding connection jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : ACTIVE
+10:16:42.358 [JPPF Client-0002] DEBUG o.j.client.JPPFClientConnectionImpl - connection [jppf_discovery-1-1] added to the client pool
+10:16:42.358 [TaskQueueChecker] DEBUG o.j.c.b.queue.TaskQueueChecker - found 1 acceptable channels
+10:16:42.358 [TaskQueueChecker] DEBUG o.j.c.b.queue.TaskQueueChecker - channel found for bundle: ChannelWrapperRemote[channel=jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : ACTIVE]
+10:16:42.358 [TaskQueueChecker] DEBUG o.j.c.b.queue.TaskQueueChecker - dispatching jobUuid=5ED4C999-C3CE-0EDB-69B0-9F93991DFC22 to channel ChannelWrapperRemote[channel=jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : ACTIVE], connectionUuid=
+10:16:42.359 [TaskQueueChecker] DEBUG o.j.c.b.queue.JPPFPriorityQueue - requesting bundle with 1000000 tasks, next bundle has 1 tasks
+10:16:42.360 [TaskQueueChecker] DEBUG o.j.c.b.queue.JPPFPriorityQueue - removing bundle from queue, jobId=Template blocking job
+10:16:42.360 [TaskQueueChecker] DEBUG o.j.c.b.queue.JPPFPriorityQueue - Maps size information: priorityMap[shallow size=0, total elements=0] - sizeMap[shallow size=0, total elements=0]
+10:16:42.361 [TaskQueueChecker] DEBUG o.j.c.AbstractClientConnectionHandler - connection 'jppf_discovery-1-1 - TasksServer' status changing from ACTIVE to EXECUTING
+10:16:42.361 [TaskQueueChecker] DEBUG o.j.c.AbstractJPPFClientConnection - connection 'jppf_discovery-1-1' status changing from ACTIVE to EXECUTING
+10:16:42.362 [TaskQueueChecker] DEBUG org.jppf.client.JPPFJob - firing JOB_START event with 0 tasks for JPPFJob[name=Template blocking job, uuid=5ED4C999-C3CE-0EDB-69B0-9F93991DFC22, blocking=true, nbTasks=1, nbResults=0, jobSLA=org.jppf.node.protocol.JPPFJobSLA@7acdff36]
+10:16:42.364 [TaskQueueChecker] DEBUG org.jppf.client.JPPFResultCollector - job [5ED4C999-C3CE-0EDB-69B0-9F93991DFC22] status changing from 'PENDING' to 'EXECUTING'
+10:16:42.364 [TaskQueueChecker] DEBUG org.jppf.client.JPPFResultCollector - job [5ED4C999-C3CE-0EDB-69B0-9F93991DFC22] fire status changed event for 'EXECUTING'
+10:16:42.364 [TaskQueueChecker] DEBUG org.jppf.client.JPPFJob - firing JOB_DISPATCH event with 1 tasks for JPPFJob[name=Template blocking job, uuid=5ED4C999-C3CE-0EDB-69B0-9F93991DFC22, blocking=true, nbTasks=1, nbResults=0, jobSLA=org.jppf.node.protocol.JPPFJobSLA@7acdff36]
+10:16:42.365 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG o.jppf.client.AbstractGenericClient - registered java.net.URLClassLoader@78fcc563
+10:16:42.376 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] resource requested: JPPFResourceWrapper[dynamic=true, name=org/jppf/application/template/TemplateJPPFTask.class, state=PROVIDER_REQUEST, uuidPath=TraversalList[position=0, list=[BEDE9CA9-8DBE-EA54-FCC2-3E606882A9F5, 1DCF19C0-192F-5EF9-F35A-F7D3BC85EAF0]], callableID=-1]
+10:16:42.377 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] using classloaders=[java.net.URLClassLoader@78fcc563]
+10:16:42.377 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractResourceProvider - resource [org/jppf/application/template/TemplateJPPFTask.class] found
+10:16:42.377 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] found resource: org/jppf/application/template/TemplateJPPFTask.class (1095 bytes)
+10:16:42.378 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] data sent to the server
+10:16:42.378 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] reading next resource ...
+10:16:42.383 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG o.j.client.BaseJPPFClientConnection - JPPFClientConnectionImpl[connectionUuid=BEDE9CA9-8DBE-EA54-FCC2-3E606882A9F5_1, status=EXECUTING] : received bundle JPPFTaskBundle[name=Template blocking job, uuid=5ED4C999-C3CE-0EDB-69B0-9F93991DFC22, initialTaskCount=1, taskCount=1, bundleUuid=null, uuidPath=TraversalList[position=0, list=[BEDE9CA9-8DBE-EA54-FCC2-3E606882A9F5, 1DCF19C0-192F-5EF9-F35A-F7D3BC85EAF0]]], positions=0
+10:16:42.383 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG o.j.c.balancer.ChannelWrapperRemote - received 1 tasks from server, first position=0
+10:16:42.383 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG org.jppf.client.balancer.ClientJob - received 1 results for bundle [jobId=Template blocking job, jobUuid=5ED4C999-C3CE-0EDB-69B0-9F93991DFC22, initialTaskCount=1, taskCount=1, requeue=false, cancelled=false]
+10:16:42.384 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG org.jppf.client.JobResults - adding 1 results
+10:16:42.384 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG org.jppf.client.JPPFResultCollector - Received results for 1 tasks, pendingCount=0, count=1, jobResults=JobResults[size=1, positions=[0]]
+10:16:42.384 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG org.jppf.client.JPPFJob - firing JOB_RETURN event with 1 tasks for JPPFJob[name=Template blocking job, uuid=5ED4C999-C3CE-0EDB-69B0-9F93991DFC22, blocking=true, nbTasks=1, nbResults=1, jobSLA=org.jppf.node.protocol.JPPFJobSLA@7acdff36]
+10:16:42.384 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG org.jppf.client.JPPFJob - firing JOB_END event with 1 tasks for JPPFJob[name=Template blocking job, uuid=5ED4C999-C3CE-0EDB-69B0-9F93991DFC22, blocking=true, nbTasks=1, nbResults=1, jobSLA=org.jppf.node.protocol.JPPFJobSLA@7acdff36]
+10:16:42.384 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG o.jppf.client.AbstractGenericClient - unregistering 5ED4C999-C3CE-0EDB-69B0-9F93991DFC22
+Results for job 'Template blocking job' :
+10:16:42.384 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG org.jppf.client.balancer.ClientJob - bundle=[jobId=Template blocking job, jobUuid=5ED4C999-C3CE-0EDB-69B0-9F93991DFC22, initialTaskCount=1, taskCount=1, requeue=false, cancelled=false], exception=null for ClientJob[job=JPPFJob[name=Template blocking job, uuid=5ED4C999-C3CE-0EDB-69B0-9F93991DFC22, blocking=true, nbTasks=1, nbResults=1, jobSLA=org.jppf.node.protocol.JPPFJobSLA@7acdff36], jobStatus=EXECUTING, broadcastUUID=null, executing=true, nbTasks=0]
+Template blocking job - Template task, execution result: esta es una tarea falsa
+10:16:42.384 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG o.j.c.b.queue.JPPFPriorityQueue - removing bundle from queue, jobId=Template blocking job
+10:16:42.384 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG org.jppf.client.JPPFResultCollector - job [5ED4C999-C3CE-0EDB-69B0-9F93991DFC22] status changing from 'EXECUTING' to 'COMPLETE'
+10:16:42.384 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG org.jppf.client.JPPFResultCollector - job [5ED4C999-C3CE-0EDB-69B0-9F93991DFC22] fire status changed event for 'COMPLETE'
+10:16:42.384 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.jppf.client.AbstractGenericClient - closing JPPF client
+10:16:42.384 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG o.j.c.AbstractClientConnectionHandler - connection 'jppf_discovery-1-1 - TasksServer' status changing from EXECUTING to ACTIVE
+10:16:42.384 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.jppf.client.AbstractGenericClient - unregistering startup classes
+10:16:42.385 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG o.j.c.AbstractJPPFClientConnection - connection 'jppf_discovery-1-1' status changing from EXECUTING to ACTIVE
+10:16:42.385 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.jppf.client.AbstractGenericClient - closing job manager
+10:16:42.385 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.client.balancer.JobManagerClient - closing org.jppf.client.balancer.JobManagerClient@3c7b1b33
+10:16:42.385 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.jppf.client.AbstractGenericClient - closing broadcast receiver
+10:16:42.385 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.jppf.client.AbstractGenericClient - closing executor
+10:16:42.385 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.jppf.client.AbstractGenericClient - clearing registered class loaders
+10:16:42.385 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractJPPFClientConnection - connection 'jppf_discovery-1-1' status changing from ACTIVE to CLOSED
+10:16:42.385 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.jppf.client.AbstractGenericClient - Connection [jppf_discovery-1-1] CLOSED
+10:16:42.385 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG org.jppf.client.AbstractJPPFClient - removing connection jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : CLOSED
+10:16:42.385 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.jppf.client.AbstractConnectionPool - removing jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : CLOSED from JPPFConnectionPool[name=jppf_discovery-1, id=1, coreSize=1, maxSize=1, priority=0, sslEnabled=false, client=org.jppf.client.JPPFClient@349685ab]
+10:16:42.385 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractJPPFClientConnection - closing connection JPPFClientConnectionImpl[connectionUuid=BEDE9CA9-8DBE-EA54-FCC2-3E606882A9F5_1, status=CLOSED]
+10:16:42.385 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.client.BaseJPPFClientConnection - JPPFClientConnectionImpl[connectionUuid=BEDE9CA9-8DBE-EA54-FCC2-3E606882A9F5_1, status=CLOSED] sending close command job, uuidPath=TraversalList[position=-1, list=[BEDE9CA9-8DBE-EA54-FCC2-3E606882A9F5]]
+10:16:42.386 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractJPPFClientConnection - closing task server connection jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : CLOSED
+10:16:42.386 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractClientConnectionHandler - closing jppf_discovery-1-1 - TasksServer
+10:16:42.386 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.socket.SocketInitializerImpl - SocketInitializerImpl[TIRE-WKS-345494.canal.acp:11111] closing socket initializer
+10:16:42.386 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractClientConnectionHandler - jppf_discovery-1-1 - TasksServer closed
+10:16:42.386 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractJPPFClientConnection - closing class server connection jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : CLOSED
+10:16:42.386 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractClassServerDelegate - closing jppf_discovery-1-1 - ClassServer
+10:16:42.386 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractClientConnectionHandler - closing jppf_discovery-1-1 - ClassServer
+10:16:42.386 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.socket.SocketInitializerImpl - SocketInitializerImpl[TIRE-WKS-345494.canal.acp:11111] closing socket initializer
+10:16:42.386 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractClientConnectionHandler - jppf_discovery-1-1 - ClassServer closed
+10:16:42.386 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractClassServerDelegate - jppf_discovery-1-1 - ClassServer closed
+10:16:42.386 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractJPPFClientConnection - closing jmx connection jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : CLOSED
+10:16:42.386 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractJPPFClientConnection - connection JPPFClientConnectionImpl[connectionUuid=BEDE9CA9-8DBE-EA54-FCC2-3E606882A9F5_1, status=CLOSED] closed
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 9.039 s
+[INFO] Finished at: 2015-10-05T10:16:42-05:00
+[INFO] Final Memory: 11M/308M
+[INFO] ------------------------------------------------------------------------
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building jppf-5.0-Test 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> exec-maven-plugin:1.2.1:java (default-cli) > validate @ Jppf-5.0-Test >>>
+[INFO] 
+[INFO] <<< exec-maven-plugin:1.2.1:java (default-cli) < validate @ Jppf-5.0-Test <<<
+[INFO] 
+[INFO] --- exec-maven-plugin:1.2.1:java (default-cli) @ Jppf-5.0-Test ---
+10:19:48.053 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG org.jppf.utils.JPPFConfiguration - reading JPPF configuration file: jppf.properties
+10:19:48.058 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG org.jppf.client.AbstractJPPFClient - Instantiating JPPF client with uuid=12A16572-3EA4-E22E-2447-DFD0E1508A04
+10:19:48.102 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG org.jppf.utils.NetworkUtils - process name=5336@TIRE-WKS-345494, pid=5336
+10:19:48.102 [org.jppf.application.template.TemplateApplicationRunner.main()] INFO  org.jppf.utils.VersionUtils - --------------------------------------------------------------------------------
+10:19:48.102 [org.jppf.application.template.TemplateApplicationRunner.main()] INFO  org.jppf.utils.VersionUtils - JPPF Version: 5.0, Build number: 1452, Build date: 2015-03-01 07:02 CET
+10:19:48.102 [org.jppf.application.template.TemplateApplicationRunner.main()] INFO  org.jppf.utils.VersionUtils - starting client with PID=5336, UUID=12A16572-3EA4-E22E-2447-DFD0E1508A04
+10:19:48.103 [org.jppf.application.template.TemplateApplicationRunner.main()] INFO  org.jppf.utils.VersionUtils - --------------------------------------------------------------------------------
+10:19:48.103 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG org.jppf.utils.NetworkUtils - process name=5336@TIRE-WKS-345494, pid=5336
+client process id: 5336, uuid: 12A16572-3EA4-E22E-2447-DFD0E1508A04
+10:19:48.106 [InitPools] DEBUG o.jppf.client.AbstractGenericClient - initializing connections
+10:19:48.107 [InitPools] DEBUG o.jppf.client.AbstractGenericClient - initializing connections from discovery with priority = 0 and acceptMultipleInterfaces = false
+10:19:48.111 [InitPools] DEBUG o.jppf.client.AbstractGenericClient - found peers in the configuration
+10:19:48.111 [InitPools] DEBUG o.jppf.client.AbstractGenericClient - list of drivers: default-driver
+10:19:48.113 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG org.jppf.client.JPPFClient - submitting job JPPFJob[name=Template blocking job, uuid=3E157037-B390-2E58-7B7B-159307F1B70B, blocking=true, nbTasks=1, nbResults=0, jobSLA=org.jppf.node.protocol.JPPFJobSLA@9e918ed]
+10:19:48.120 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.l.b.spi.JPPFBundlerFactory - using default properties: CLIENT{jppf.load.balancing.profile.jppf.size=1000000, jppf.load.balancing.algorithm=manual, jppf.script.default.language=javascript, jppf.load.balancing.profile=jppf}
+10:19:48.120 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.l.b.spi.JPPFBundlerFactory - load balancing configuration using algorithm 'manual' with parameters: {size=1000000}
+10:19:48.121 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.l.b.spi.JPPFBundlerFactory - oldCL=java.net.URLClassLoader@1b0324a3, currentCL=java.net.URLClassLoader@1b0324a3
+10:19:48.123 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.l.b.spi.JPPFBundlerFactory - registering new load-balancing algorithm provider 'rl'
+10:19:48.123 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.l.b.spi.JPPFBundlerFactory - registering new load-balancing algorithm provider 'proportional'
+10:19:48.123 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.l.b.spi.JPPFBundlerFactory - registering new load-balancing algorithm provider 'autotuned'
+10:19:48.123 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.l.b.spi.JPPFBundlerFactory - registering new load-balancing algorithm provider 'manual'
+10:19:48.123 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.l.b.spi.JPPFBundlerFactory - registering new load-balancing algorithm provider 'nodethreads'
+10:19:48.123 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.l.b.spi.JPPFBundlerFactory - found 5 load-balancing algorithms in the classpath
+10:19:48.128 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.scheduling.JPPFScheduleHandler - created executor with name=Job Schedule Handler
+10:19:48.128 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.scheduling.JPPFScheduleHandler - created executor with name=Job Expiration Handler
+10:19:48.132 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.balancer.AbstractClientJob - creating ClientJob #1
+10:19:48.133 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG org.jppf.client.JPPFResultCollector - job [3E157037-B390-2E58-7B7B-159307F1B70B] status changing from 'SUBMITTED' to 'PENDING'
+10:19:48.133 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG org.jppf.client.JPPFResultCollector - job [3E157037-B390-2E58-7B7B-159307F1B70B] fire status changed event for 'PENDING'
+10:19:48.133 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.b.queue.JPPFPriorityQueue - adding bundle with ClientJob[job=JPPFJob[name=Template blocking job, uuid=3E157037-B390-2E58-7B7B-159307F1B70B, blocking=true, nbTasks=1, nbResults=0, jobSLA=org.jppf.node.protocol.JPPFJobSLA@9e918ed], jobStatus=PENDING, broadcastUUID=null, executing=false, nbTasks=1]
+10:19:48.134 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.b.queue.JPPFPriorityQueue - Maps size information: priorityMap[shallow size=1, total elements=1] - sizeMap[shallow size=1, total elements=1]
+10:19:48.163 [Thread-1] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:lo (Software Loopback Interface 1)
+10:19:48.163 [Thread-1] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:net4 (Microsoft ISATAP Adapter)
+10:19:48.163 [Thread-1] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:eth4 (Intel(R) Ethernet Connection I217-LM #2)
+10:19:48.164 [Thread-1] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:eth6 (VirtualBox Host-Only Ethernet Adapter)
+10:19:48.164 [Thread-1] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:net6 (Microsoft ISATAP Adapter #2)
+10:19:48.214 [Thread-1] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:lo (Software Loopback Interface 1)
+10:19:48.214 [Thread-1] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:net4 (Microsoft ISATAP Adapter)
+10:19:48.214 [Thread-1] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:eth4 (Intel(R) Ethernet Connection I217-LM #2)
+10:19:48.214 [Thread-1] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:eth6 (VirtualBox Host-Only Ethernet Adapter)
+10:19:48.214 [Thread-1] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:net6 (Microsoft ISATAP Adapter #2)
+10:19:48.215 [Thread-1] DEBUG o.j.c.d.JPPFMulticastReceiver - Found 2 addresses: 10.106.32.93 192.168.56.1
+10:19:48.423 [Receiver@10.106.32.93:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:19:48.424 [Receiver@192.168.56.1:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:19:48.424 [Thread-1] DEBUG o.j.c.JPPFMulticastReceiverThread - Found connection information: JPPFConnectionInformation[uuid=1DCF19C0-192F-5EF9-F35A-F7D3BC85EAF0, host=10.106.32.93, managementPort=11198, recoveryPort=-1, serverPorts=11111, sslServerPorts=11443]
+10:19:48.425 [Thread-1] DEBUG o.jppf.client.AbstractGenericClient - new connection: jppf_discovery-1
+10:19:48.428 [JPPF Client-0001] DEBUG o.jppf.client.AbstractGenericClient - '10.106.32.93' was resolved into 'TIRE-WKS-345494.canal.acp'
+10:19:48.432 [JPPF Client-0001] DEBUG o.jppf.client.AbstractConnectionPool - adding jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : CREATED to JPPFConnectionPool[name=jppf_discovery-1, id=1, coreSize=1, maxSize=1, priority=0, sslEnabled=false, client=org.jppf.client.JPPFClient@24f1c9c6]
+10:19:48.437 [JPPF Client-0001] DEBUG o.j.s.JPPFSerialization$Factory - found jppf.object.serialization.class = null
+10:19:48.437 [JPPF Client-0001] DEBUG o.j.s.JPPFSerialization$Factory - using DefaultJavaSerialization
+10:19:48.438 [JPPF Client-0001] DEBUG o.jppf.client.AbstractConnectionPool - adding JMXDriverConnectionWrapper[url=service:jmx:jmxmp://10.106.32.93:11198, connected=false, local=false, secure=false] to JMXConnectionPool[coreSize=1, maxSize=1, connectionCount=0, coreConnections=0]
+10:19:48.438 [JPPF Client-0001] INFO  o.jppf.client.AbstractGenericClient - connection [jppf_discovery-1-1] created
+10:19:48.438 [jmx@10.106.32.93:11198] DEBUG o.j.management.JMXConnectionThread - 10.106.32.93:11198 about to perform connection attempts
+10:19:48.438 [JPPF Client-0001] DEBUG o.j.c.AbstractJPPFClientConnection - connection 'jppf_discovery-1-1' status changing from CREATED to NEW
+10:19:48.440 [JPPF Client-0001] DEBUG o.j.client.balancer.JobManagerClient - adding connection jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : NEW
+10:19:48.443 [JPPF Client-0002] DEBUG o.jppf.client.ConnectionInitializer - initializing driver connection 'jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : NEW'
+10:19:48.445 [JPPF Client-0002] DEBUG o.j.c.ResourceProvider$Factory - jppf.resource.provider.class = org.jppf.classloader.ResourceProviderImpl
+10:19:48.445 [JPPF Client-0002] DEBUG o.j.c.AbstractClassServerDelegate - resourceProvider=org.jppf.classloader.ResourceProviderImpl@69683ca4
+10:19:48.446 [JPPF Client-0002] DEBUG o.j.c.AbstractClientConnectionHandler - connection 'jppf_discovery-1-1 - ClassServer' status changing from NEW to CONNECTING
+[client: jppf_discovery-1-1 - ClassServer] Attempting connection to the class server at TIRE-WKS-345494.canal.acp:11111
+10:19:48.447 [JPPF Client-0002] INFO  o.j.client.ClassServerDelegateImpl - [client: jppf_discovery-1-1 - ClassServer] Attempting connection to the class server at TIRE-WKS-345494.canal.acp:11111
+10:19:48.447 [JPPF Client-0002] DEBUG o.j.c.socket.SocketInitializerImpl - SocketInitializerImpl[TIRE-WKS-345494.canal.acp:11111] about to close socket wrapper
+10:19:48.468 [jmx@10.106.32.93:11198] DEBUG o.j.management.JMXConnectionWrapper - 10.106.32.93:11198 JMX connection successfully established
+10:19:48.468 [jmx@10.106.32.93:11198] DEBUG o.j.management.JMXConnectionThread - 10.106.32.93:11198 about to suspend connection attempts
+10:19:48.493 [JPPF Client-0001] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:lo (Software Loopback Interface 1)
+10:19:48.494 [JPPF Client-0001] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:net4 (Microsoft ISATAP Adapter)
+10:19:48.494 [JPPF Client-0001] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:eth4 (Intel(R) Ethernet Connection I217-LM #2)
+10:19:48.494 [JPPF Client-0001] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:eth6 (VirtualBox Host-Only Ethernet Adapter)
+10:19:48.494 [JPPF Client-0001] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:net6 (Microsoft ISATAP Adapter #2)
+10:19:48.543 [JPPF Client-0001] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:lo (Software Loopback Interface 1)
+10:19:48.543 [JPPF Client-0001] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:net4 (Microsoft ISATAP Adapter)
+10:19:48.543 [JPPF Client-0001] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:eth4 (Intel(R) Ethernet Connection I217-LM #2)
+10:19:48.543 [JPPF Client-0001] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:eth6 (VirtualBox Host-Only Ethernet Adapter)
+10:19:48.543 [JPPF Client-0001] DEBUG org.jppf.utils.NetworkUtils - found network interface: name:net6 (Microsoft ISATAP Adapter #2)
+10:19:49.420 [Receiver@10.106.32.93:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:19:49.420 [Receiver@192.168.56.1:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:19:49.455 [JPPF Client-0002] DEBUG o.j.c.socket.AbstractSocketWrapper - getReceiveBufferSize() = 32768
+[client: jppf_discovery-1-1 - ClassServer] Reconnected to the class server
+10:19:49.455 [JPPF Client-0002] INFO  o.j.client.ClassServerDelegateImpl - [client: jppf_discovery-1-1 - ClassServer] Reconnected to the class server
+10:19:49.456 [JPPF Client-0002] DEBUG o.j.c.AbstractClientConnectionHandler - connection 'jppf_discovery-1-1 - ClassServer' status changing from CONNECTING to ACTIVE
+10:19:49.457 [JPPF Client-0002] DEBUG o.j.c.AbstractClientConnectionHandler - connection 'jppf_discovery-1-1 - TasksServer' status changing from NEW to CONNECTING
+10:19:49.457 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] : sending channel identifier
+10:19:49.457 [JPPF Client-0002] DEBUG o.j.c.AbstractJPPFClientConnection - connection 'jppf_discovery-1-1' status changing from NEW to CONNECTING
+10:19:49.457 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] : sending initial resource
+10:19:49.475 [jppf_discovery-1-1 - ClassServer] DEBUG org.jppf.io.IOHelper - Loaded serializer class class org.jppf.utils.ObjectSerializerImpl
+10:19:49.489 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] data sent to the server
+10:19:49.490 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] reading next resource ...
+10:19:49.494 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] : server handshake done
+10:19:49.494 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] reading next resource ...
+10:19:50.420 [Receiver@10.106.32.93:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:19:50.420 [Receiver@192.168.56.1:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:19:51.420 [Receiver@10.106.32.93:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:19:51.420 [Receiver@192.168.56.1:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:19:52.420 [Receiver@10.106.32.93:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:19:52.420 [Receiver@192.168.56.1:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:19:53.420 [Receiver@10.106.32.93:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:19:53.420 [Receiver@192.168.56.1:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:19:54.420 [Receiver@10.106.32.93:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:19:54.421 [Receiver@192.168.56.1:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:19:55.315 [JPPF Client-0001] DEBUG o.j.client.balancer.JobManagerClient - end of adding connection jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : CONNECTING
+10:19:55.316 [JPPF Client-0001] DEBUG o.jppf.client.AbstractGenericClient - end of connection [jppf_discovery-1-1] created
+[client: jppf_discovery-1-1 - TasksServer] Attempting connection to the task server at TIRE-WKS-345494.canal.acp:11111
+10:19:55.316 [JPPF Client-0002] DEBUG o.j.c.TaskServerConnectionHandler - [client: jppf_discovery-1-1 - TasksServer] Attempting connection to the task server at TIRE-WKS-345494.canal.acp:11111
+10:19:55.316 [JPPF Client-0002] DEBUG o.j.c.socket.SocketInitializerImpl - SocketInitializerImpl[TIRE-WKS-345494.canal.acp:11111] about to close socket wrapper
+10:19:55.420 [Receiver@192.168.56.1:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:19:55.420 [Receiver@10.106.32.93:11111] DEBUG o.j.c.d.JPPFMulticastReceiver - nb connections: 1
+10:19:56.318 [JPPF Client-0002] DEBUG o.j.c.socket.AbstractSocketWrapper - getReceiveBufferSize() = 32768
+10:19:56.319 [JPPF Client-0002] DEBUG o.j.c.TaskServerConnectionHandler - sending JPPF identifier
+10:19:56.322 [JPPF Client-0002] DEBUG o.j.client.BaseJPPFClientConnection - JPPFClientConnectionImpl[connectionUuid=12A16572-3EA4-E22E-2447-DFD0E1508A04_1, status=CONNECTING] sending handshake job, uuidPath=TraversalList[position=-1, list=[12A16572-3EA4-E22E-2447-DFD0E1508A04]]
+10:19:56.364 [JPPF Client-0002] DEBUG o.j.client.BaseJPPFClientConnection - JPPFClientConnectionImpl[connectionUuid=12A16572-3EA4-E22E-2447-DFD0E1508A04_1, status=CONNECTING] : received bundle JPPFTaskBundle[name=handshake job, uuid=handshake job, initialTaskCount=0, taskCount=0, bundleUuid=null, uuidPath=TraversalList[position=0, list=[12A16572-3EA4-E22E-2447-DFD0E1508A04, 1DCF19C0-192F-5EF9-F35A-F7D3BC85EAF0]]], positions=
+[client: jppf_discovery-1-1 - TasksServer] Reconnected to the JPPF task server
+10:19:56.364 [JPPF Client-0002] DEBUG o.j.c.TaskServerConnectionHandler - [client: jppf_discovery-1-1 - TasksServer] Reconnected to the JPPF task server
+10:19:56.364 [JPPF Client-0002] DEBUG o.j.c.AbstractClientConnectionHandler - connection 'jppf_discovery-1-1 - TasksServer' status changing from CONNECTING to ACTIVE
+10:19:56.364 [JPPF Client-0002] DEBUG o.j.c.AbstractJPPFClientConnection - connection 'jppf_discovery-1-1' status changing from CONNECTING to ACTIVE
+10:19:56.366 [JPPF Client-0002] DEBUG o.j.client.JPPFClientConnectionImpl - connection [jppf_discovery-1-1] status=ACTIVE
+10:19:56.366 [TaskQueueChecker] DEBUG o.j.c.b.queue.TaskQueueChecker - 1 channels idle
+10:19:56.366 [JPPF Client-0002] DEBUG org.jppf.client.AbstractJPPFClient - adding connection jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : ACTIVE
+10:19:56.366 [TaskQueueChecker] DEBUG o.j.c.b.queue.TaskQueueChecker - found 1 acceptable channels
+10:19:56.366 [JPPF Client-0002] DEBUG o.j.client.JPPFClientConnectionImpl - connection [jppf_discovery-1-1] added to the client pool
+10:19:56.366 [TaskQueueChecker] DEBUG o.j.c.b.queue.TaskQueueChecker - channel found for bundle: ChannelWrapperRemote[channel=jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : ACTIVE]
+10:19:56.366 [TaskQueueChecker] DEBUG o.j.c.b.queue.TaskQueueChecker - dispatching jobUuid=3E157037-B390-2E58-7B7B-159307F1B70B to channel ChannelWrapperRemote[channel=jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : ACTIVE], connectionUuid=
+10:19:56.368 [TaskQueueChecker] DEBUG o.j.c.b.queue.JPPFPriorityQueue - requesting bundle with 1000000 tasks, next bundle has 1 tasks
+10:19:56.369 [TaskQueueChecker] DEBUG o.j.c.b.queue.JPPFPriorityQueue - removing bundle from queue, jobId=Template blocking job
+10:19:56.369 [TaskQueueChecker] DEBUG o.j.c.b.queue.JPPFPriorityQueue - Maps size information: priorityMap[shallow size=0, total elements=0] - sizeMap[shallow size=0, total elements=0]
+10:19:56.370 [TaskQueueChecker] DEBUG o.j.c.AbstractClientConnectionHandler - connection 'jppf_discovery-1-1 - TasksServer' status changing from ACTIVE to EXECUTING
+10:19:56.370 [TaskQueueChecker] DEBUG o.j.c.AbstractJPPFClientConnection - connection 'jppf_discovery-1-1' status changing from ACTIVE to EXECUTING
+10:19:56.372 [TaskQueueChecker] DEBUG org.jppf.client.JPPFJob - firing JOB_START event with 0 tasks for JPPFJob[name=Template blocking job, uuid=3E157037-B390-2E58-7B7B-159307F1B70B, blocking=true, nbTasks=1, nbResults=0, jobSLA=org.jppf.node.protocol.JPPFJobSLA@9e918ed]
+10:19:56.373 [TaskQueueChecker] DEBUG org.jppf.client.JPPFResultCollector - job [3E157037-B390-2E58-7B7B-159307F1B70B] status changing from 'PENDING' to 'EXECUTING'
+10:19:56.373 [TaskQueueChecker] DEBUG org.jppf.client.JPPFResultCollector - job [3E157037-B390-2E58-7B7B-159307F1B70B] fire status changed event for 'EXECUTING'
+10:19:56.373 [TaskQueueChecker] DEBUG org.jppf.client.JPPFJob - firing JOB_DISPATCH event with 1 tasks for JPPFJob[name=Template blocking job, uuid=3E157037-B390-2E58-7B7B-159307F1B70B, blocking=true, nbTasks=1, nbResults=0, jobSLA=org.jppf.node.protocol.JPPFJobSLA@9e918ed]
+10:19:56.374 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG o.jppf.client.AbstractGenericClient - registered java.net.URLClassLoader@1b0324a3
+10:19:56.393 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] resource requested: JPPFResourceWrapper[dynamic=true, name=org/jppf/application/template/TemplateJPPFTask.class, state=PROVIDER_REQUEST, uuidPath=TraversalList[position=0, list=[12A16572-3EA4-E22E-2447-DFD0E1508A04, 1DCF19C0-192F-5EF9-F35A-F7D3BC85EAF0]], callableID=-1]
+10:19:56.394 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] using classloaders=[java.net.URLClassLoader@1b0324a3]
+10:19:56.395 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractResourceProvider - resource [org/jppf/application/template/TemplateJPPFTask.class] found
+10:19:56.395 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] found resource: org/jppf/application/template/TemplateJPPFTask.class (1095 bytes)
+10:19:56.396 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] data sent to the server
+10:19:56.396 [jppf_discovery-1-1 - ClassServer] DEBUG o.j.c.AbstractClassServerDelegate - [jppf_discovery-1-1 - ClassServer] reading next resource ...
+10:19:56.406 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG o.j.client.BaseJPPFClientConnection - JPPFClientConnectionImpl[connectionUuid=12A16572-3EA4-E22E-2447-DFD0E1508A04_1, status=EXECUTING] : received bundle JPPFTaskBundle[name=Template blocking job, uuid=3E157037-B390-2E58-7B7B-159307F1B70B, initialTaskCount=1, taskCount=1, bundleUuid=null, uuidPath=TraversalList[position=0, list=[12A16572-3EA4-E22E-2447-DFD0E1508A04, 1DCF19C0-192F-5EF9-F35A-F7D3BC85EAF0]]], positions=0
+10:19:56.406 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG o.j.c.balancer.ChannelWrapperRemote - received 1 tasks from server, first position=0
+10:19:56.406 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG org.jppf.client.balancer.ClientJob - received 1 results for bundle [jobId=Template blocking job, jobUuid=3E157037-B390-2E58-7B7B-159307F1B70B, initialTaskCount=1, taskCount=1, requeue=false, cancelled=false]
+10:19:56.407 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG org.jppf.client.JobResults - adding 1 results
+10:19:56.407 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG org.jppf.client.JPPFResultCollector - Received results for 1 tasks, pendingCount=0, count=1, jobResults=JobResults[size=1, positions=[0]]
+10:19:56.408 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG org.jppf.client.JPPFJob - firing JOB_RETURN event with 1 tasks for JPPFJob[name=Template blocking job, uuid=3E157037-B390-2E58-7B7B-159307F1B70B, blocking=true, nbTasks=1, nbResults=1, jobSLA=org.jppf.node.protocol.JPPFJobSLA@9e918ed]
+10:19:56.408 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG org.jppf.client.JPPFJob - firing JOB_END event with 1 tasks for JPPFJob[name=Template blocking job, uuid=3E157037-B390-2E58-7B7B-159307F1B70B, blocking=true, nbTasks=1, nbResults=1, jobSLA=org.jppf.node.protocol.JPPFJobSLA@9e918ed]
+10:19:56.408 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG o.jppf.client.AbstractGenericClient - unregistering 3E157037-B390-2E58-7B7B-159307F1B70B
+Results for job 'Template blocking job' :
+10:19:56.408 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG org.jppf.client.balancer.ClientJob - bundle=[jobId=Template blocking job, jobUuid=3E157037-B390-2E58-7B7B-159307F1B70B, initialTaskCount=1, taskCount=1, requeue=false, cancelled=false], exception=null for ClientJob[job=JPPFJob[name=Template blocking job, uuid=3E157037-B390-2E58-7B7B-159307F1B70B, blocking=true, nbTasks=1, nbResults=1, jobSLA=org.jppf.node.protocol.JPPFJobSLA@9e918ed], jobStatus=EXECUTING, broadcastUUID=null, executing=true, nbTasks=0]
+Template blocking job - Template task, execution result: hola esta es una tarea cierta
+10:19:56.408 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG o.j.c.b.queue.JPPFPriorityQueue - removing bundle from queue, jobId=Template blocking job
+10:19:56.409 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG org.jppf.client.JPPFResultCollector - job [3E157037-B390-2E58-7B7B-159307F1B70B] status changing from 'EXECUTING' to 'COMPLETE'
+10:19:56.409 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.jppf.client.AbstractGenericClient - closing JPPF client
+10:19:56.409 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG org.jppf.client.JPPFResultCollector - job [3E157037-B390-2E58-7B7B-159307F1B70B] fire status changed event for 'COMPLETE'
+10:19:56.409 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.jppf.client.AbstractGenericClient - unregistering startup classes
+10:19:56.409 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG o.j.c.AbstractClientConnectionHandler - connection 'jppf_discovery-1-1 - TasksServer' status changing from EXECUTING to ACTIVE
+10:19:56.409 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.jppf.client.AbstractGenericClient - closing job manager
+10:19:56.409 [RemoteChannelWrapper-jppf_discovery-1-1-0001] DEBUG o.j.c.AbstractJPPFClientConnection - connection 'jppf_discovery-1-1' status changing from EXECUTING to ACTIVE
+10:19:56.409 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.client.balancer.JobManagerClient - closing org.jppf.client.balancer.JobManagerClient@17f1292f
+10:19:56.410 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.jppf.client.AbstractGenericClient - closing broadcast receiver
+10:19:56.410 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.jppf.client.AbstractGenericClient - closing executor
+10:19:56.410 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.jppf.client.AbstractGenericClient - clearing registered class loaders
+10:19:56.410 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractJPPFClientConnection - connection 'jppf_discovery-1-1' status changing from ACTIVE to CLOSED
+10:19:56.410 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.jppf.client.AbstractGenericClient - Connection [jppf_discovery-1-1] CLOSED
+10:19:56.410 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG org.jppf.client.AbstractJPPFClient - removing connection jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : CLOSED
+10:19:56.410 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.jppf.client.AbstractConnectionPool - removing jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : CLOSED from JPPFConnectionPool[name=jppf_discovery-1, id=1, coreSize=1, maxSize=1, priority=0, sslEnabled=false, client=org.jppf.client.JPPFClient@24f1c9c6]
+10:19:56.411 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractJPPFClientConnection - closing connection JPPFClientConnectionImpl[connectionUuid=12A16572-3EA4-E22E-2447-DFD0E1508A04_1, status=CLOSED]
+10:19:56.411 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.client.BaseJPPFClientConnection - JPPFClientConnectionImpl[connectionUuid=12A16572-3EA4-E22E-2447-DFD0E1508A04_1, status=CLOSED] sending close command job, uuidPath=TraversalList[position=-1, list=[12A16572-3EA4-E22E-2447-DFD0E1508A04]]
+10:19:56.412 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractJPPFClientConnection - closing task server connection jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : CLOSED
+10:19:56.412 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractClientConnectionHandler - closing jppf_discovery-1-1 - TasksServer
+10:19:56.412 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.socket.SocketInitializerImpl - SocketInitializerImpl[TIRE-WKS-345494.canal.acp:11111] closing socket initializer
+10:19:56.412 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractClientConnectionHandler - jppf_discovery-1-1 - TasksServer closed
+10:19:56.412 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractJPPFClientConnection - closing class server connection jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : CLOSED
+10:19:56.413 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractClassServerDelegate - closing jppf_discovery-1-1 - ClassServer
+10:19:56.413 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractClientConnectionHandler - closing jppf_discovery-1-1 - ClassServer
+10:19:56.413 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.socket.SocketInitializerImpl - SocketInitializerImpl[TIRE-WKS-345494.canal.acp:11111] closing socket initializer
+10:19:56.413 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractClientConnectionHandler - jppf_discovery-1-1 - ClassServer closed
+10:19:56.413 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractClassServerDelegate - jppf_discovery-1-1 - ClassServer closed
+10:19:56.413 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractJPPFClientConnection - closing jmx connection jppf_discovery-1-1[TIRE-WKS-345494.canal.acp:11111] : CLOSED
+10:19:56.413 [org.jppf.application.template.TemplateApplicationRunner.main()] DEBUG o.j.c.AbstractJPPFClientConnection - connection JPPFClientConnectionImpl[connectionUuid=12A16572-3EA4-E22E-2447-DFD0E1508A04_1, status=CLOSED] closed
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 9.122 s
+[INFO] Finished at: 2015-10-05T10:19:56-05:00
+[INFO] Final Memory: 11M/308M
+[INFO] ------------------------------------------------------------------------

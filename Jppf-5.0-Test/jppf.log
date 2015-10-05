@@ -1,7 +1,7 @@
-2015-10-02 18:47:58,974 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(80)]: --------------------------------------------------------------------------------
-2015-10-02 18:47:58,976 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(81)]: JPPF Version: 5.0.4, Build number: 1467, Build date: 2015-08-07 07:21 CEST
-2015-10-02 18:47:58,976 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(82)]: starting client with PID=8492, UUID=F8975399-050C-6850-072F-682FCDCE0226
-2015-10-02 18:47:58,977 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(83)]: --------------------------------------------------------------------------------
-2015-10-02 18:47:59,467 [INFO ][org.jppf.client.AbstractGenericClient.newConnection(289)]: connection [jppf_discovery-1-1] created
-2015-10-02 18:47:59,474 [INFO ][org.jppf.client.ClassServerDelegateImpl.init(77)]: [client: jppf_discovery-1-1 - ClassServer] Attempting connection to the class server at TIRE-WKS-345494.canal.acp:11111
-2015-10-02 18:48:00,479 [INFO ][org.jppf.client.ClassServerDelegateImpl.init(85)]: [client: jppf_discovery-1-1 - ClassServer] Reconnected to the class server
+2015-10-05 10:16:11,995 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(80)]: --------------------------------------------------------------------------------
+2015-10-05 10:16:11,997 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(81)]: JPPF Version: 5.0, Build number: 1452, Build date: 2015-03-01 07:02 CET
+2015-10-05 10:16:11,997 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(82)]: starting client with PID=4736, UUID=5A50FBA7-9FDE-53F9-8F9E-C53066B943B1
+2015-10-05 10:16:11,997 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(83)]: --------------------------------------------------------------------------------
+2015-10-05 10:16:12,458 [INFO ][org.jppf.client.AbstractGenericClient.newConnection(287)]: connection [jppf_discovery-1-1] created
+2015-10-05 10:16:12,465 [INFO ][org.jppf.client.ClassServerDelegateImpl.init(77)]: [client: jppf_discovery-1-1 - ClassServer] Attempting connection to the class server at TIRE-WKS-345494.canal.acp:11111
+2015-10-05 10:16:13,468 [INFO ][org.jppf.client.ClassServerDelegateImpl.init(85)]: [client: jppf_discovery-1-1 - ClassServer] Reconnected to the class server

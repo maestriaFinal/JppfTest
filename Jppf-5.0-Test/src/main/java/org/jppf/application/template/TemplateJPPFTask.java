@@ -49,7 +49,7 @@ public class TemplateJPPFTask extends AbstractTask<String> {
    */
   @Override
   public void run() {
-    // write your task code here.
+      // write your task code here.
     System.out.println("Hola esta es la imprecion de la tarea 1");
    
     // ...
@@ -62,8 +62,8 @@ public class TemplateJPPFTask extends AbstractTask<String> {
    
    double sd = s*ss;
    
-   String mensaje = sd<100?"hola esta es una tarea cierta":"esta es una tarea falsa";
-    System.out.println(mensaje);
+   String mensaje = sd>100?"hola esta es una tarea cierta":"esta es una tarea falsa";
+      System.out.println(mensaje);
     setResult(mensaje);
   }
 }

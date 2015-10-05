@@ -75,41 +75,35 @@
                     </executions>
                 </plugin>
                 <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.2.1</version>    
-                        <executions>
-                            <execution>
-                                <phase>package</phase> <!-- Add this -->
-                                <goals>
-                                    <goal>java</goal>
-                                </goals>
-                            </execution>
-                        </executions>                 
-                        <configuration>
-                            <executable>java</executable> 
-                            <mainClass>org.jppf.application.template.TemplateApplicationRunner</mainClass>                          
-                            <arguments>                                 
-                                <argument>-Djppf.config=C:\\Users\\MAveces\\Documents\\NetBeansProjects\\JppfTest\\Jppf-5.0-Test\\configjppf.properties</argument>
-                                <argument>-Djava.util.logging.config.file=C:\\Users\\MAveces\\Documents\\NetBeansProjects\\JppfTest\\Jppf-5.0-Test\\configlogging.properties</argument>
-                                <argument>-Xmx64m</argument>
-                            </arguments>
-                        </configuration>
-                    </plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>exec-maven-plugin</artifactId>
+                    <version>1.2.1</version>    
+                    <executions>
+                        <execution>
+                            <phase>package</phase> <!-- Add this -->
+                            <goals>
+                                <goal>java</goal>
+                            </goals>
+                        </execution>
+                    </executions>                 
+                    <configuration>
+                        <executable>java</executable> 
+                        <mainClass>org.jppf.application.template.TemplateApplicationRunner</mainClass>                          
+                        <arguments>                                 
+                            <argument>-Djppf.config=C:\\Users\\MAveces\\Documents\\NetBeansProjects\\JppfTest\\Jppf-5.0-Test\\configjppf.properties</argument>
+                            <argument>-Djava.util.logging.config.file=C:\\Users\\MAveces\\Documents\\NetBeansProjects\\JppfTest\\Jppf-5.0-Test\\configlogging.properties</argument>
+                            <argument>-Xmx64m</argument>
+                        </arguments>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
     <dependencies>
-         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.1</version>
-            <scope>test</scope>
-        </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.7</version>
+            <version>1.6.1</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -130,8 +124,14 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
-        </dependency>      
+        </dependency> 
         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+     
+        <!--dependency>
             <groupId>org.jppf</groupId>
             <artifactId>jppf-common-node</artifactId>
             <version>4.2.4</version>
@@ -141,12 +141,24 @@
                     <artifactId>slf4j-log4j12</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
+        </dependency-->
         <dependency>
             <groupId>org.jppf</groupId>
             <artifactId>jppf-common</artifactId>
             <version>5.0</version>
         </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jppf</groupId>
+            <artifactId>jppf-jmxremote_optional</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+
         <dependency>
             <groupId>org.jppf</groupId>
             <artifactId>jppf-client</artifactId>
