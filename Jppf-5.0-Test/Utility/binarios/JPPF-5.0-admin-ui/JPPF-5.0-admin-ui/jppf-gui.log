@@ -1,0 +1,11 @@
+2015-10-05 15:18:06,068 [DEBUG][org.jppf.ui.options.xml.OptionDescriptorParser.createScriptDescriptor(224)]: no protocol: org/jppf/ui/options/xml/imports.groovy
+2015-10-05 15:18:06,350 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(80)]: --------------------------------------------------------------------------------
+2015-10-05 15:18:06,350 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(81)]: JPPF Version: 5.0, Build number: 1452, Build date: 2015-03-01 07:02 CET
+2015-10-05 15:18:06,350 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(82)]: starting client with PID=4508, UUID=1F35F3D6-7C4E-BEB0-32B4-4C6E0307D28B
+2015-10-05 15:18:06,351 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(83)]: --------------------------------------------------------------------------------
+2015-10-05 15:18:06,606 [DEBUG][org.jppf.ui.options.xml.OptionDescriptorParser.createScriptDescriptor(224)]: no protocol: org/jppf/ui/options/xml/imports.groovy
+2015-10-05 15:18:06,607 [DEBUG][org.jppf.ui.options.xml.OptionDescriptorParser.createScriptDescriptor(224)]: no protocol: org/jppf/ui/options/xml/ChartsConfig.groovy
+2015-10-05 15:18:06,650 [DEBUG][org.jppf.ui.options.xml.OptionDescriptorParser.createScriptDescriptor(224)]: no protocol: org/jppf/ui/options/xml/LoadBalancingSettings.groovy
+2015-10-05 15:18:07,338 [INFO ][org.jppf.client.AbstractGenericClient.newConnection(287)]: connection [jppf_discovery-1-1] created
+2015-10-05 15:18:07,357 [INFO ][org.jppf.client.ClassServerDelegateImpl.init(77)]: [client: jppf_discovery-1-1 - ClassServer] Attempting connection to the class server at TIRE-WKS-345494.canal.acp:11111
+2015-10-05 15:18:08,361 [INFO ][org.jppf.client.ClassServerDelegateImpl.init(85)]: [client: jppf_discovery-1-1 - ClassServer] Reconnected to the class server
