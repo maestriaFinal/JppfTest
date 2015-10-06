@@ -45,11 +45,11 @@ public class TemplateApplicationRunner {
 
             // create a runner instance.
             TemplateApplicationRunner runner = new TemplateApplicationRunner();
-System.out.println("estoy en el main");
+            System.out.println("estoy en el main");
             // create and execute a blocking job
             runner.executeBlockingJob(jppfClient);
 
-      // create and execute a non-blocking job
+            // create and execute a non-blocking job
             //runner.executeNonBlockingJob(jppfClient);
             // create and execute 3 jobs concurrently
             //runner.executeMultipleConcurrentJobs(jppfClient, 3);
@@ -71,29 +71,28 @@ System.out.println("estoy en el main");
         JPPFJob job = new JPPFJob();
         // give this job a readable name that we can use to monitor and manage it.
         job.setName("Template Job ID");
- 
+
         // add a task to the job.
-          job.add(new TemplateJPPFTask());
+        job.add(new TemplateJPPFTask());
         // provide a user-defined name for the task
         //task.setId(" - Template task");
         for (int x = 0; x > 10; x++) {
             job.add(new TemplateJPPFTask());
         }
+        job.add(new TemplateJPPFTaskOtherTask());
         job.getSLA().setSuspended(true);
-    
-         JPPFJob job2 = new JPPFJob();
-        job2.setName("template Job ID 2");
-        // add a task to the job.
-          //job.add(new TemplateJPPFTaskOtherTask());
-        // provide a user-defined name for the task
-        //task.setId(" - Template task");
-        for (int x = 0; x > 10; x++) {
-            job2.add(new TemplateJPPFTaskOtherTask());
-        }
-        job2.getSLA().setSuspended(true);
+
         return job;
     }
     
+    
+      public JPPFJob createJob2() throws Exception {        
+        JPPFJob jobMaveces = new JPPFJob();
+        jobMaveces.setName("Template Job Maveces");
+        jobMaveces.add(new TemplateJPPFTaskOtherTask());        
+        jobMaveces.getSLA().setSuspended(true);
+        return jobMaveces;
+    }
 
 //    public JPPFJob createJob() throws Exception {
 //        // create a JPPF job
@@ -118,8 +117,9 @@ System.out.println("estoy en el main");
      * @throws Exception if an error occurs while executing the job.
      */
     public void executeBlockingJob(final JPPFClient jppfClient) throws Exception {
-       
+
         System.out.println("estoy en el executeBlockingJob");// Create a job
+        ejevutaJob2();
         JPPFJob job = createJob();
 
         // set the job in blocking mode.
@@ -132,6 +132,27 @@ System.out.println("estoy en el main");
 
         // process the results
         processExecutionResults(job.getName(), results);
+    }
+    
+    
+    
+    public void ejevutaJob2(){
+          try (JPPFClient jppfClient = new JPPFClient()) {
+            TemplateApplicationRunner runner = new TemplateApplicationRunner();
+            System.out.println("estoy en el main Job 2");          
+            runner.executeBlockingJobMAVeces(jppfClient);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
+      public void executeBlockingJobMAVeces(final JPPFClient jppfClient) throws Exception {
+        System.out.println("estoy en el executeBlockingJob");// Create a job
+        JPPFJob job2 = createJob2();
+        job2.setBlocking(true); 
+        List<Task<?>> results = jppfClient.submitJob(job2);
+        processExecutionResults(job2.getName(), results);
     }
 
     /**
