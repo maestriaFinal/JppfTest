@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<title></title>
+  <style type="text/css">
+    <!--code { font-family: Courier New, Courier; font-size: 10pt; margin: 0px; }-->
+  </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head><body>
+
+
+<!-- ======================================================== -->
+<!-- = Java Sourcecode to HTML automatically converted code = -->
+<!-- =   Java2Html Converter 5.0 [2006-02-26] by Markus Gebhard  markus@jave.de   = -->
+<!-- =     Further information: http://www.java2html.de     = -->
+<div align="left" class="java">
+<table border="0" cellpadding="3" cellspacing="0" bgcolor="#ffffff">
+  <!-- start headline -->
+   <tr>
+    <td colspan="2">
+     <center><font size="+2">
+      <code><b>
+MyView.java
+      </b></code>
+     </font></center>
+    </td>
+   </tr>
+  <!-- end headline -->
+   <tr>
+  <!-- start source code -->
+   <td nowrap="nowrap" valign="top" align="left">
+    <code>
+<font color="#3f7f5f">/*</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f7f5f">*&nbsp;JPPF.</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f7f5f">*&nbsp;Copyright&nbsp;(C)&nbsp;2005-2015&nbsp;JPPF&nbsp;Team.</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f7f5f">*&nbsp;http://www.jppf.org</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f7f5f">*</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f7f5f">*&nbsp;Licensed&nbsp;under&nbsp;the&nbsp;Apache&nbsp;License,&nbsp;Version&nbsp;2.0&nbsp;(the&nbsp;&#34;License&#34;);</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f7f5f">*&nbsp;you&nbsp;may&nbsp;not&nbsp;use&nbsp;this&nbsp;file&nbsp;except&nbsp;in&nbsp;compliance&nbsp;with&nbsp;the&nbsp;License.</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f7f5f">*&nbsp;You&nbsp;may&nbsp;obtain&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;License&nbsp;at</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f7f5f">*</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f7f5f">*&nbsp;&nbsp;&nbsp;http://www.apache.org/licenses/LICENSE-2.0</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f7f5f">*</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f7f5f">*&nbsp;Unless&nbsp;required&nbsp;by&nbsp;applicable&nbsp;law&nbsp;or&nbsp;agreed&nbsp;to&nbsp;in&nbsp;writing,&nbsp;software</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f7f5f">*&nbsp;distributed&nbsp;under&nbsp;the&nbsp;License&nbsp;is&nbsp;distributed&nbsp;on&nbsp;an&nbsp;&#34;AS&nbsp;IS&#34;&nbsp;BASIS,</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f7f5f">*&nbsp;WITHOUT&nbsp;WARRANTIES&nbsp;OR&nbsp;CONDITIONS&nbsp;OF&nbsp;ANY&nbsp;KIND,&nbsp;either&nbsp;express&nbsp;or&nbsp;implied.</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f7f5f">*&nbsp;See&nbsp;the&nbsp;License&nbsp;for&nbsp;the&nbsp;specific&nbsp;language&nbsp;governing&nbsp;permissions&nbsp;and</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f7f5f">*&nbsp;limitations&nbsp;under&nbsp;the&nbsp;License.</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f7f5f">*/</font><br />
+<font color="#ffffff"></font><br />
+<font color="#7f0055"><b>package&nbsp;</b></font><font color="#000000">org.jppf.example.pluggableview;</font><br />
+<font color="#ffffff"></font><br />
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">java.awt.*;</font><br />
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">java.awt.datatransfer.*;</font><br />
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">java.awt.event.*;</font><br />
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">java.text.SimpleDateFormat;</font><br />
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">java.util.*;</font><br />
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">java.util.concurrent.ConcurrentLinkedDeque;</font><br />
+<font color="#ffffff"></font><br />
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">javax.swing.*;</font><br />
+<font color="#ffffff"></font><br />
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">org.jppf.client.monitoring.topology.*;</font><br />
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">org.jppf.ui.plugin.PluggableView;</font><br />
+<font color="#7f0055"><b>import&nbsp;</b></font><font color="#000000">org.jppf.ui.utils.GuiUtils;</font><br />
+<font color="#ffffff"></font><br />
+<font color="#3f5fbf">/**</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;Example&nbsp;of&nbsp;a&nbsp;pluggable&nbsp;view&nbsp;that&nbsp;can&nbsp;be&nbsp;added&nbsp;to&nbsp;the&nbsp;JPPF&nbsp;administration&nbsp;and&nbsp;monitoring&nbsp;console.</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;p&gt;</font><font color="#3f5fbf">This&nbsp;class&nbsp;builds&nbsp;a&nbsp;view&nbsp;which&nbsp;displays&nbsp;a&nbsp;log&nbsp;of&nbsp;the&nbsp;JPPF&nbsp;topology&nbsp;events&nbsp;that&nbsp;occur,&nbsp;when&nbsp;drivers</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;or&nbsp;nodes&nbsp;are&nbsp;added&nbsp;to&nbsp;or&nbsp;removed&nbsp;from&nbsp;the&nbsp;topology.</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;p&gt;</font><font color="#3f5fbf">The&nbsp;view&nbsp;comprises&nbsp;3&nbsp;panels:</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;ul&gt;</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;li&gt;</font><font color="#3f5fbf">the&nbsp;top&nbsp;panel&nbsp;displays&nbsp;a&nbsp;JPPF&nbsp;logo&nbsp;with&nbsp;a&nbsp;formatted&nbsp;title</font><font color="#7f7f9f">&lt;/li&gt;</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;li&gt;</font><font color="#3f5fbf">the&nbsp;middle&nbsp;panel&nbsp;is&nbsp;a&nbsp;text&nbsp;area&nbsp;where&nbsp;timestamped&nbsp;events&nbsp;scroll&nbsp;down&nbsp;as&nbsp;they&nbsp;occur</font><font color="#7f7f9f">&lt;/li&gt;</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;li&gt;</font><font color="#3f5fbf">the&nbsp;bottom&nbsp;panel&nbsp;has&nbsp;2&nbsp;buttons&nbsp;to&nbsp;clear&nbsp;the&nbsp;log&nbsp;and&nbsp;copy&nbsp;all&nbsp;log&nbsp;entries&nbsp;to&nbsp;the&nbsp;clipboard</font><font color="#7f7f9f">&lt;/li&gt;</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;/ul&gt;</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;p&gt;</font><font color="#3f5fbf">To&nbsp;plug&nbsp;the&nbsp;view&nbsp;into&nbsp;the&nbsp;admin&nbsp;console,&nbsp;the&nbsp;following&nbsp;properties&nbsp;are&nbsp;added&nbsp;to&nbsp;the&nbsp;conosle's</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;configuration&nbsp;file:</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;pre&gt;&nbsp;</font><font color="#3f5fbf">#&nbsp;enable&nbsp;/&nbsp;disable&nbsp;the&nbsp;custom&nbsp;view.&nbsp;defaults&nbsp;to&nbsp;true&nbsp;(enabled)</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;jppf.admin.console.view.MyView.enabled&nbsp;=&nbsp;true</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;#&nbsp;name&nbsp;of&nbsp;a&nbsp;class&nbsp;extending&nbsp;org.jppf.ui.plugin.PluggableView</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;jppf.admin.console.view.MyView.class&nbsp;=&nbsp;test.console.MyView</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;#&nbsp;the&nbsp;title&nbsp;for&nbsp;the&nbsp;view;&nbsp;only&nbsp;used&nbsp;if&nbsp;placed&nbsp;in&nbsp;a&nbsp;tabbed&nbsp;pane</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;jppf.admin.console.view.MyView.title&nbsp;=&nbsp;Events&nbsp;Log</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;#&nbsp;path&nbsp;to&nbsp;the&nbsp;icon&nbsp;for&nbsp;the&nbsp;view;&nbsp;only&nbsp;used&nbsp;if&nbsp;placed&nbsp;in&nbsp;a&nbsp;tabbed&nbsp;pane</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;jppf.admin.console.view.MyView.icon&nbsp;=&nbsp;/test.gif</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;#&nbsp;the&nbsp;built-in&nbsp;view&nbsp;it&nbsp;is&nbsp;attached&nbsp;to;&nbsp;&#34;Main&#34;&nbsp;is&nbsp;the&nbsp;main&nbsp;tabbed&nbsp;pane</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;jppf.admin.console.view.MyView.addto&nbsp;=&nbsp;Main</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;#&nbsp;the&nbsp;position&nbsp;at&nbsp;which&nbsp;the&nbsp;custom&nbsp;view&nbsp;is&nbsp;inserted&nbsp;withing&nbsp;the&nbsp;enclosing&nbsp;tabbed&nbsp;pane</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;#&nbsp;a&nbsp;negative&nbsp;value&nbsp;means&nbsp;insert&nbsp;at&nbsp;the&nbsp;end;&nbsp;defaults&nbsp;to&nbsp;-1&nbsp;(insert&nbsp;at&nbsp;the&nbsp;end)</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;jppf.admin.console.view.MyView.position&nbsp;=&nbsp;1</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;#&nbsp;whether&nbsp;to&nbsp;automatically&nbsp;select&nbsp;the&nbsp;view&nbsp;on&nbsp;startup;&nbsp;defaults&nbsp;to&nbsp;false</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;#jppf.admin.console.view.MyView.autoselect&nbsp;=&nbsp;true</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f7f9f">&lt;/pre&gt;</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@author&nbsp;</font><font color="#3f5fbf">Laurent&nbsp;Cohen</font><br />
+<font color="#ffffff">&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#7f0055"><b>public&nbsp;class&nbsp;</b></font><font color="#000000">MyView&nbsp;</font><font color="#7f0055"><b>extends&nbsp;</b></font><font color="#000000">PluggableView&nbsp;</font><font color="#000000">{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;The&nbsp;maximum&nbsp;number&nbsp;of&nbsp;entries&nbsp;in&nbsp;the&nbsp;log.</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;static&nbsp;final&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">MAX_MESSAGES&nbsp;=&nbsp;</font><font color="#990000">50</font><font color="#000000">_000;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;The&nbsp;view's&nbsp;backgroud&nbsp;color.</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;static&nbsp;final&nbsp;</b></font><font color="#000000">Color&nbsp;BKG&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Color</font><font color="#000000">(</font><font color="#990000">232</font><font color="#000000">,&nbsp;</font><font color="#990000">234</font><font color="#000000">,&nbsp;</font><font color="#990000">253</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;The&nbsp;Swing&nbsp;component&nbsp;enclosing&nbsp;the&nbsp;view.</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">JComponent&nbsp;component&nbsp;=&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;The&nbsp;text&nbsp;area&nbsp;where&nbsp;the&nbsp;log&nbsp;entries&nbsp;are&nbsp;displayed</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">JTextArea&nbsp;textArea&nbsp;=&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Rolling&nbsp;double-ended&nbsp;queue&nbsp;of&nbsp;log&nbsp;entries.</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">Deque&lt;String&gt;&nbsp;messages&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">ConcurrentLinkedDeque&lt;&gt;</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Maintains&nbsp;the&nbsp;current&nbsp;log&nbsp;size&nbsp;to&nbsp;avoid&nbsp;expensive&nbsp;computations.</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#7f0055"><b>int&nbsp;</b></font><font color="#000000">logSize&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;The&nbsp;date&nbsp;format&nbsp;used&nbsp;to&nbsp;format&nbsp;the&nbsp;timestamps.</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;final&nbsp;</b></font><font color="#000000">SimpleDateFormat&nbsp;sdf&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">SimpleDateFormat</font><font color="#000000">(</font><font color="#2a00ff">&#34;yyyy-MM-dd&nbsp;HH:mm:ss.SSS&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff"></font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Get&nbsp;or&nbsp;create&nbsp;the&nbsp;view&nbsp;as&nbsp;a&nbsp;Swing&nbsp;component.</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">a&nbsp;</font><font color="#3f3fbf">{@link&nbsp;JComponent}</font><font color="#3f5fbf">.</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#646464">@Override</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#000000">JComponent&nbsp;getUIComponent</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>if&nbsp;</b></font><font color="#000000">(</font><font color="#000000">component&nbsp;==&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">JPanel&nbsp;panel&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">JPanel</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">panel.setLayout</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">BoxLayout</font><font color="#000000">(</font><font color="#000000">panel,&nbsp;BoxLayout.Y_AXIS</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">panel.setBorder</font><font color="#000000">(</font><font color="#000000">BorderFactory.createEtchedBorder</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">panel.setBackground</font><font color="#000000">(</font><font color="#000000">BKG</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">panel.add</font><font color="#000000">(</font><font color="#000000">Box.createVerticalStrut</font><font color="#000000">(</font><font color="#990000">10</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;add&nbsp;the&nbsp;JPPF&nbsp;logo</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">panel.add</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">JLabel</font><font color="#000000">(</font><font color="#000000">GuiUtils.loadIcon</font><font color="#000000">(</font><font color="#2a00ff">&#34;/jppf_logo.gif&#34;</font><font color="#000000">)))</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;add&nbsp;a&nbsp;formatted&nbsp;text&nbsp;just&nbsp;below&nbsp;the&nbsp;logo</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">JLabel&nbsp;label&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">JLabel</font><font color="#000000">(</font><font color="#2a00ff">&#34;JPPF&nbsp;pluggable&nbsp;view&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">label.setForeground</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Color</font><font color="#000000">(</font><font color="#990000">109</font><font color="#000000">,&nbsp;</font><font color="#990000">120</font><font color="#000000">,&nbsp;</font><font color="#990000">182</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Font&nbsp;font&nbsp;=&nbsp;label.getFont</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">label.setFont</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Font</font><font color="#000000">(</font><font color="#2a00ff">&#34;Arial&#34;</font><font color="#000000">,&nbsp;Font.BOLD,&nbsp;</font><font color="#990000">2</font><font color="#000000">*font.getSize</font><font color="#000000">()))</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">panel.add</font><font color="#000000">(</font><font color="#000000">label</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">panel.add</font><font color="#000000">(</font><font color="#000000">Box.createVerticalStrut</font><font color="#000000">(</font><font color="#990000">10</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;add&nbsp;the&nbsp;text&nbsp;area&nbsp;that&nbsp;displays&nbsp;the&nbsp;log&nbsp;messages</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">panel.add</font><font color="#000000">(</font><font color="#000000">createTextArea</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;add&nbsp;the&nbsp;action&nbsp;buttons</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">panel.add</font><font color="#000000">(</font><font color="#000000">createButtonsPanel</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;register&nbsp;this&nbsp;view&nbsp;to&nbsp;listen&nbsp;to&nbsp;topology&nbsp;events&nbsp;to&nbsp;update&nbsp;the&nbsp;log&nbsp;accordingly</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">getTopologyManager</font><font color="#000000">()</font><font color="#000000">.addTopologyListener</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">MyListener</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">panel.add</font><font color="#000000">(</font><font color="#000000">Box.createGlue</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">component&nbsp;=&nbsp;panel;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">component;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff"></font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Create&nbsp;the&nbsp;text&nbsp;area&nbsp;which&nbsp;displays&nbsp;the&nbsp;log&nbsp;messages.</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;It&nbsp;is&nbsp;enclosed&nbsp;within&nbsp;a&nbsp;</font><font color="#3f3fbf">{@link&nbsp;JScrollPane}&nbsp;</font><font color="#3f5fbf">with&nbsp;a&nbsp;border&nbsp;and&nbsp;title.</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">the&nbsp;</font><font color="#3f3fbf">{@link&nbsp;JComponent}&nbsp;</font><font color="#3f5fbf">enclosing&nbsp;the&nbsp;text&nbsp;area.</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">JComponent&nbsp;createTextArea</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">textArea&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">JTextArea</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">textArea.setEditable</font><font color="#000000">(</font><font color="#7f0055"><b>false</b></font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">textArea.setBackground</font><font color="#000000">(</font><font color="#000000">BKG</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">JScrollPane&nbsp;scrollPane&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">JScrollPane</font><font color="#000000">(</font><font color="#000000">textArea</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">scrollPane.setBorder</font><font color="#000000">(</font><font color="#000000">BorderFactory.createTitledBorder</font><font color="#000000">(</font><font color="#2a00ff">&#34;Topology&nbsp;Events&#34;</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">scrollPane.setPreferredSize</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Dimension</font><font color="#000000">(</font><font color="#990000">800</font><font color="#000000">,&nbsp;</font><font color="#990000">400</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">scrollPane.setBackground</font><font color="#000000">(</font><font color="#000000">BKG</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">scrollPane;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff"></font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Create&nbsp;the&nbsp;action&nbsp;buttons.</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;They&nbsp;are&nbsp;enclosed&nbsp;within&nbsp;a&nbsp;</font><font color="#3f3fbf">{@link&nbsp;JPanel}&nbsp;</font><font color="#3f5fbf">with&nbsp;a&nbsp;border&nbsp;and&nbsp;title.</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@return&nbsp;</font><font color="#3f5fbf">a&nbsp;</font><font color="#3f3fbf">{@link&nbsp;JComponent}&nbsp;</font><font color="#3f5fbf">holding&nbsp;the&nbsp;action&nbsp;buttons.</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;</b></font><font color="#000000">JComponent&nbsp;createButtonsPanel</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;create&nbsp;the&nbsp;button&nbsp;to&nbsp;clear&nbsp;the&nbsp;log&nbsp;entries</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">JButton&nbsp;clearButton&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">JButton</font><font color="#000000">(</font><font color="#2a00ff">&#34;Clear&#34;</font><font color="#000000">,&nbsp;GuiUtils.loadIcon</font><font color="#000000">(</font><font color="#2a00ff">&#34;/clear.gif&#34;</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">clearButton.setToolTipText</font><font color="#000000">(</font><font color="#2a00ff">&#34;clear&nbsp;all&nbsp;log&nbsp;entries&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">clearButton.addActionListener</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">ActionListener</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#646464">@Override</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">actionPerformed</font><font color="#000000">(</font><font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">ActionEvent&nbsp;e</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>synchronized</b></font><font color="#000000">(</font><font color="#000000">MyView.</font><font color="#7f0055"><b>this</b></font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">messages.clear</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">textArea.setText</font><font color="#000000">(</font><font color="#2a00ff">&#34;&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">logSize&nbsp;=&nbsp;</font><font color="#990000">0</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">})</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;create&nbsp;the&nbsp;button&nbsp;to&nbsp;copy&nbsp;the&nbsp;log&nbsp;entries&nbsp;to&nbsp;the&nbsp;clipboard</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">JButton&nbsp;copyButton&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">JButton</font><font color="#000000">(</font><font color="#2a00ff">&#34;Copy&#34;</font><font color="#000000">,&nbsp;GuiUtils.loadIcon</font><font color="#000000">(</font><font color="#2a00ff">&#34;/copy.gif&#34;</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">copyButton.setToolTipText</font><font color="#000000">(</font><font color="#2a00ff">&#34;copy&nbsp;all&nbsp;log&nbsp;entries&nbsp;to&nbsp;the&nbsp;clipboard&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">copyButton.addActionListener</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">ActionListener</font><font color="#000000">()&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#646464">@Override</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">actionPerformed</font><font color="#000000">(</font><font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">ActionEvent&nbsp;e</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">String&nbsp;text&nbsp;=&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>synchronized</b></font><font color="#000000">(</font><font color="#000000">MyView.</font><font color="#7f0055"><b>this</b></font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">text&nbsp;=&nbsp;textArea.getText</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">Clipboard&nbsp;clip&nbsp;=&nbsp;Toolkit.getDefaultToolkit</font><font color="#000000">()</font><font color="#000000">.getSystemClipboard</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">clip.setContents</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">StringSelection</font><font color="#000000">(</font><font color="#000000">text</font><font color="#000000">)</font><font color="#000000">,&nbsp;</font><font color="#7f0055"><b>null</b></font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">})</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">JPanel&nbsp;panel&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">JPanel</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">panel.setBackground</font><font color="#000000">(</font><font color="#000000">BKG</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">panel.setLayout</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">BoxLayout</font><font color="#000000">(</font><font color="#000000">panel,&nbsp;BoxLayout.X_AXIS</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">panel.setBorder</font><font color="#000000">(</font><font color="#000000">BorderFactory.createTitledBorder</font><font color="#000000">(</font><font color="#2a00ff">&#34;Actions&#34;</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">panel.add</font><font color="#000000">(</font><font color="#000000">Box.createHorizontalStrut</font><font color="#000000">(</font><font color="#990000">10</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">panel.add</font><font color="#000000">(</font><font color="#000000">clearButton</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">panel.add</font><font color="#000000">(</font><font color="#000000">Box.createHorizontalStrut</font><font color="#000000">(</font><font color="#990000">10</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">panel.add</font><font color="#000000">(</font><font color="#000000">copyButton</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">panel.add</font><font color="#000000">(</font><font color="#000000">Box.createHorizontalGlue</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">panel.setPreferredSize</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Dimension</font><font color="#000000">(</font><font color="#990000">800</font><font color="#000000">,&nbsp;</font><font color="#990000">28</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>return&nbsp;</b></font><font color="#000000">panel;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff"></font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;This&nbsp;method&nbsp;adds&nbsp;a&nbsp;new&nbsp;entry&nbsp;to&nbsp;the&nbsp;messages&nbsp;log.</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;</font><font color="#7f9fbf">@param&nbsp;</font><font color="#3f5fbf">message&nbsp;the&nbsp;message&nbsp;to&nbsp;add.</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;synchronized&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">newMessage</font><font color="#000000">(</font><font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">String&nbsp;message</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;create&nbsp;and&nbsp;format&nbsp;a&nbsp;timestamp</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">String&nbsp;date&nbsp;=&nbsp;sdf.format</font><font color="#000000">(</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">Date</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;add&nbsp;the&nbsp;new,&nbsp;timestamped&nbsp;message&nbsp;to&nbsp;the&nbsp;log</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">messages.add</font><font color="#000000">(</font><font color="#000000">String.format</font><font color="#000000">(</font><font color="#2a00ff">&#34;[%s]&nbsp;%s&#34;</font><font color="#000000">,&nbsp;date,&nbsp;message</font><font color="#000000">))</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">logSize++;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;if&nbsp;number&nbsp;of&nbsp;log&nbsp;entries&nbsp;&gt;&nbsp;max,&nbsp;remove&nbsp;the&nbsp;oldest&nbsp;ones</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>while&nbsp;</b></font><font color="#000000">(</font><font color="#000000">logSize&nbsp;&gt;&nbsp;MAX_MESSAGES</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">messages.removeFirst</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">logSize--;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;update&nbsp;the&nbsp;text&nbsp;of&nbsp;the&nbsp;text&nbsp;area</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">StringBuilder&nbsp;sb&nbsp;=&nbsp;</font><font color="#7f0055"><b>new&nbsp;</b></font><font color="#000000">StringBuilder</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>for&nbsp;</b></font><font color="#000000">(</font><font color="#000000">String&nbsp;msg:&nbsp;messages</font><font color="#000000">)&nbsp;</font><font color="#000000">sb.append</font><font color="#000000">(</font><font color="#000000">msg</font><font color="#000000">)</font><font color="#000000">.append</font><font color="#000000">(</font><font color="#2a00ff">&#34;\n&#34;</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">textArea.setText</font><font color="#000000">(</font><font color="#000000">sb.toString</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#3f7f5f">//&nbsp;scroll&nbsp;to&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;log</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">textArea.setCaretPosition</font><font color="#000000">(</font><font color="#000000">sb.length</font><font color="#000000">()&nbsp;</font><font color="#000000">-&nbsp;</font><font color="#990000">1</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff"></font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#3f5fbf">/**</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*&nbsp;Our&nbsp;topology&nbsp;events&nbsp;listener&nbsp;implementation.</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;</font><font color="#3f5fbf">*/</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#7f0055"><b>private&nbsp;class&nbsp;</b></font><font color="#000000">MyListener&nbsp;</font><font color="#7f0055"><b>extends&nbsp;</b></font><font color="#000000">TopologyListenerAdapter&nbsp;</font><font color="#000000">{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#646464">@Override</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">driverAdded</font><font color="#000000">(</font><font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">TopologyEvent&nbsp;event</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">newMessage</font><font color="#000000">(</font><font color="#2a00ff">&#34;added&nbsp;driver&nbsp;&#34;&nbsp;</font><font color="#000000">+&nbsp;event.getDriver</font><font color="#000000">()</font><font color="#000000">.getDisplayName</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff"></font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#646464">@Override</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">driverRemoved</font><font color="#000000">(</font><font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">TopologyEvent&nbsp;event</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">newMessage</font><font color="#000000">(</font><font color="#2a00ff">&#34;removed&nbsp;driver&nbsp;&#34;&nbsp;</font><font color="#000000">+&nbsp;event.getDriver</font><font color="#000000">()</font><font color="#000000">.getDisplayName</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff"></font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#646464">@Override</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">nodeAdded</font><font color="#000000">(</font><font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">TopologyEvent&nbsp;event</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">TopologyNode&nbsp;node&nbsp;=&nbsp;event.getNodeOrPeer</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">String&nbsp;message&nbsp;=&nbsp;String.format</font><font color="#000000">(</font><font color="#2a00ff">&#34;added&nbsp;%s&nbsp;%s&nbsp;to&nbsp;driver&nbsp;%s&#34;</font><font color="#000000">,&nbsp;</font><font color="#000000">(</font><font color="#000000">node.isNode</font><font color="#000000">()&nbsp;</font><font color="#000000">?&nbsp;</font><font color="#2a00ff">&#34;node&#34;&nbsp;</font><font color="#000000">:&nbsp;&nbsp;</font><font color="#2a00ff">&#34;peer&#34;</font><font color="#000000">)</font><font color="#000000">,&nbsp;node.getDisplayName</font><font color="#000000">()</font><font color="#000000">,&nbsp;event.getDriver</font><font color="#000000">()</font><font color="#000000">.getDisplayName</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">newMessage</font><font color="#000000">(</font><font color="#000000">message</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff"></font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#646464">@Override</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#7f0055"><b>public&nbsp;</b></font><font color="#7f0055"><b>void&nbsp;</b></font><font color="#000000">nodeRemoved</font><font color="#000000">(</font><font color="#7f0055"><b>final&nbsp;</b></font><font color="#000000">TopologyEvent&nbsp;event</font><font color="#000000">)&nbsp;{</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">TopologyNode&nbsp;node&nbsp;=&nbsp;event.getNodeOrPeer</font><font color="#000000">()</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">String&nbsp;message&nbsp;=&nbsp;String.format</font><font color="#000000">(</font><font color="#2a00ff">&#34;removed&nbsp;%s&nbsp;%s&nbsp;from&nbsp;driver&nbsp;%s&#34;</font><font color="#000000">,&nbsp;</font><font color="#000000">(</font><font color="#000000">node.isNode</font><font color="#000000">()&nbsp;</font><font color="#000000">?&nbsp;</font><font color="#2a00ff">&#34;node&#34;&nbsp;</font><font color="#000000">:&nbsp;&nbsp;</font><font color="#2a00ff">&#34;peer&#34;</font><font color="#000000">)</font><font color="#000000">,&nbsp;node.getDisplayName</font><font color="#000000">()</font><font color="#000000">,&nbsp;event.getDriver</font><font color="#000000">()</font><font color="#000000">.getDisplayName</font><font color="#000000">())</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">newMessage</font><font color="#000000">(</font><font color="#000000">message</font><font color="#000000">)</font><font color="#000000">;</font><br />
+<font color="#ffffff">&nbsp;&nbsp;&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#ffffff">&nbsp;&nbsp;</font><font color="#000000">}</font><br />
+<font color="#000000">}</font></code>
+    
+   </td>
+  <!-- end source code -->
+   </tr>
+</table>
+</div>
+<!-- =       END of automatically generated HTML code       = -->
+<!-- ======================================================== -->
+
+
+</body></html>

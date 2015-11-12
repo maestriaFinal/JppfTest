@@ -1,7 +1,7 @@
-2015-10-05 12:44:20,283 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(80)]: --------------------------------------------------------------------------------
-2015-10-05 12:44:20,286 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(81)]: JPPF Version: 5.0, Build number: 1452, Build date: 2015-03-01 07:02 CET
-2015-10-05 12:44:20,287 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(82)]: starting node with PID=6776, UUID=B47B48BB-0D26-43D0-9183-0057768B1379
-2015-10-05 12:44:20,287 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(83)]: --------------------------------------------------------------------------------
-2015-10-05 12:44:22,390 [INFO ][org.jppf.classloader.ClassLoaderRequestHandler.run(155)]: maxBatchSize = 1
-2015-10-05 12:44:22,411 [INFO ][org.jppf.execute.AbstractExecutionManager.<init>(116)]: running 8 processing threads
-2015-10-05 12:44:22,412 [INFO ][org.jppf.execute.AbstractExecutionManager.createThreadManager(142)]: Using default thread manager
+2015-11-10 14:51:58,824 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(80)]: --------------------------------------------------------------------------------
+2015-11-10 14:51:58,824 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(81)]: JPPF Version: 5.0, Build number: 1452, Build date: 2015-03-01 07:02 CET
+2015-11-10 14:51:58,824 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(82)]: starting node with PID=5380, UUID=5046D46C-8129-59BF-D099-6E0CF773406C
+2015-11-10 14:51:58,824 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(83)]: --------------------------------------------------------------------------------
+2015-11-10 14:52:14,495 [INFO ][org.jppf.classloader.ClassLoaderRequestHandler.run(155)]: maxBatchSize = 1
+2015-11-10 14:52:14,558 [INFO ][org.jppf.execute.AbstractExecutionManager.<init>(116)]: running 4 processing threads
+2015-11-10 14:52:14,558 [INFO ][org.jppf.execute.AbstractExecutionManager.createThreadManager(142)]: Using default thread manager

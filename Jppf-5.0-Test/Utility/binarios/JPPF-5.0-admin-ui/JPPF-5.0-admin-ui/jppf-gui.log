@@ -1,11 +1,20 @@
-2015-10-05 15:18:06,068 [DEBUG][org.jppf.ui.options.xml.OptionDescriptorParser.createScriptDescriptor(224)]: no protocol: org/jppf/ui/options/xml/imports.groovy
-2015-10-05 15:18:06,350 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(80)]: --------------------------------------------------------------------------------
-2015-10-05 15:18:06,350 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(81)]: JPPF Version: 5.0, Build number: 1452, Build date: 2015-03-01 07:02 CET
-2015-10-05 15:18:06,350 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(82)]: starting client with PID=4508, UUID=1F35F3D6-7C4E-BEB0-32B4-4C6E0307D28B
-2015-10-05 15:18:06,351 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(83)]: --------------------------------------------------------------------------------
-2015-10-05 15:18:06,606 [DEBUG][org.jppf.ui.options.xml.OptionDescriptorParser.createScriptDescriptor(224)]: no protocol: org/jppf/ui/options/xml/imports.groovy
-2015-10-05 15:18:06,607 [DEBUG][org.jppf.ui.options.xml.OptionDescriptorParser.createScriptDescriptor(224)]: no protocol: org/jppf/ui/options/xml/ChartsConfig.groovy
-2015-10-05 15:18:06,650 [DEBUG][org.jppf.ui.options.xml.OptionDescriptorParser.createScriptDescriptor(224)]: no protocol: org/jppf/ui/options/xml/LoadBalancingSettings.groovy
-2015-10-05 15:18:07,338 [INFO ][org.jppf.client.AbstractGenericClient.newConnection(287)]: connection [jppf_discovery-1-1] created
-2015-10-05 15:18:07,357 [INFO ][org.jppf.client.ClassServerDelegateImpl.init(77)]: [client: jppf_discovery-1-1 - ClassServer] Attempting connection to the class server at TIRE-WKS-345494.canal.acp:11111
-2015-10-05 15:18:08,361 [INFO ][org.jppf.client.ClassServerDelegateImpl.init(85)]: [client: jppf_discovery-1-1 - ClassServer] Reconnected to the class server
+2015-11-10 14:39:22,819 [DEBUG][org.jppf.ui.options.xml.OptionDescriptorParser.createScriptDescriptor(224)]: no protocol: org/jppf/ui/options/xml/imports.groovy
+2015-11-10 14:39:22,991 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(80)]: --------------------------------------------------------------------------------
+2015-11-10 14:39:22,991 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(81)]: JPPF Version: 5.0, Build number: 1452, Build date: 2015-03-01 07:02 CET
+2015-11-10 14:39:22,991 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(82)]: starting client with PID=2872, UUID=2B3C29CD-0D89-0101-9241-245D22AFA7FE
+2015-11-10 14:39:22,991 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(83)]: --------------------------------------------------------------------------------
+2015-11-10 14:39:23,225 [DEBUG][org.jppf.ui.options.xml.OptionDescriptorParser.createScriptDescriptor(224)]: no protocol: org/jppf/ui/options/xml/imports.groovy
+2015-11-10 14:39:23,225 [DEBUG][org.jppf.ui.options.xml.OptionDescriptorParser.createScriptDescriptor(224)]: no protocol: org/jppf/ui/options/xml/ChartsConfig.groovy
+2015-11-10 14:39:23,272 [DEBUG][org.jppf.ui.options.xml.OptionDescriptorParser.createScriptDescriptor(224)]: no protocol: org/jppf/ui/options/xml/LoadBalancingSettings.groovy
+2015-11-10 14:41:44,182 [INFO ][org.jppf.client.AbstractGenericClient.newConnection(287)]: connection [jppf_discovery-1-1] created
+2015-11-10 14:41:44,245 [INFO ][org.jppf.client.ClassServerDelegateImpl.init(77)]: [client: jppf_discovery-1-1 - ClassServer] Attempting connection to the class server at DESKTOP-H7LPCS2:11111
+2015-11-10 14:41:45,245 [INFO ][org.jppf.client.ClassServerDelegateImpl.init(85)]: [client: jppf_discovery-1-1 - ClassServer] Reconnected to the class server
+2015-11-10 14:45:47,930 [INFO ][org.jppf.client.AbstractGenericClient.newConnection(287)]: connection [jppf_discovery-2-1] created
+2015-11-10 14:45:47,930 [INFO ][org.jppf.client.ClassServerDelegateImpl.init(77)]: [client: jppf_discovery-2-1 - ClassServer] Attempting connection to the class server at DESKTOP-N9V1SM7:11112
+2015-11-10 14:45:48,936 [INFO ][org.jppf.client.ClassServerDelegateImpl.init(85)]: [client: jppf_discovery-2-1 - ClassServer] Reconnected to the class server
+2015-11-10 16:09:54,515 [WARN ][org.jppf.client.ClassServerDelegateImpl.run(109)]: [jppf_discovery-2-1 - ClassServer] caught java.net.SocketException: Connection reset, will re-initialise ...
+2015-11-10 16:09:54,515 [INFO ][org.jppf.client.ClassServerDelegateImpl.init(77)]: [client: jppf_discovery-2-1 - ClassServer] Attempting connection to the class server at DESKTOP-N9V1SM7:11112
+2015-11-10 23:41:17,491 [WARN ][org.jppf.client.ClassServerDelegateImpl.run(109)]: [jppf_discovery-1-1 - ClassServer] caught java.net.SocketException: Connection reset, will re-initialise ...
+2015-11-10 23:41:17,507 [INFO ][org.jppf.client.ClassServerDelegateImpl.init(77)]: [client: jppf_discovery-1-1 - ClassServer] Attempting connection to the class server at DESKTOP-H7LPCS2:11111
+2015-11-10 23:41:20,460 [ERROR][org.jppf.client.AbstractJPPFClientConnection.close(238)]: [jppf_discovery-1-1] Connection reset by peer: socket write error
+2015-11-10 23:41:20,460 [ERROR][org.jppf.client.AbstractJPPFClientConnection.close(238)]: [jppf_discovery-2-1] Connection reset by peer: socket write error

@@ -90,8 +90,8 @@
                         <executable>java</executable> 
                         <mainClass>org.jppf.application.template.TemplateApplicationRunner</mainClass>                          
                         <arguments>                                 
-                            <argument>-Djppf.config=C:\\Users\\MAveces\\Documents\\NetBeansProjects\\JppfTest\\Jppf-5.0-Test\\configjppf.properties</argument>
-                            <argument>-Djava.util.logging.config.file=C:\\Users\\MAveces\\Documents\\NetBeansProjects\\JppfTest\\Jppf-5.0-Test\\configlogging.properties</argument>
+                            <argument>-Djppf.config=C:\\Users\\MAveces\\Documents\\NetBeansProjects\\JppfTest\\Jppf-5.0-Test\\config\\jppf.properties</argument>
+                            <argument>-Djava.util.logging.config.file=C:\\Users\\MAveces\\Documents\\NetBeansProjects\\JppfTest\\Jppf-5.0-Test\\config\\logging.properties</argument>
                             <argument>-Xmx64m</argument>
                         </arguments>
                     </configuration>

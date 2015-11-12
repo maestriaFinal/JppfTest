@@ -1,0 +1,7 @@
+mvn clean
+mvn compile
+mvn package
+mnv install
+mvn exec:java 
+el ultimo es para ejecutarlo.
+

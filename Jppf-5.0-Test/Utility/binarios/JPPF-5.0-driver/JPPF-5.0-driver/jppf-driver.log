@@ -1,6 +1,18 @@
-2015-10-05 12:44:05,326 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(80)]: --------------------------------------------------------------------------------
-2015-10-05 12:44:05,327 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(81)]: JPPF Version: 5.0, Build number: 1452, Build date: 2015-03-01 07:02 CET
-2015-10-05 12:44:05,327 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(82)]: starting driver with PID=8760, UUID=178C7C6A-4FCF-432A-8B62-1FCEDC12D959
-2015-10-05 12:44:05,328 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(83)]: --------------------------------------------------------------------------------
-2015-10-05 12:44:05,912 [INFO ][org.jppf.nio.NioConstants.getCheckConnection(83)]: NIO checks are enabled
-2015-10-05 12:44:05,914 [INFO ][org.jppf.nio.StateTransitionManager.initExecutor(288)]: globalExecutor=java.util.concurrent.ThreadPoolExecutor@681564f4[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], maxSize=8
+2015-11-10 14:40:31,802 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(80)]: --------------------------------------------------------------------------------
+2015-11-10 14:40:31,802 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(81)]: JPPF Version: 5.0, Build number: 1452, Build date: 2015-03-01 07:02 CET
+2015-11-10 14:40:31,802 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(82)]: starting driver with PID=5900, UUID=3942F03E-CBAA-9E67-7BFD-D1C7E6ED9DD3
+2015-11-10 14:40:31,802 [INFO ][org.jppf.utils.VersionUtils.logVersionInformation(83)]: --------------------------------------------------------------------------------
+2015-11-10 14:41:24,968 [INFO ][org.jppf.nio.NioConstants.getCheckConnection(83)]: NIO checks are enabled
+2015-11-10 14:41:24,968 [INFO ][org.jppf.nio.StateTransitionManager.initExecutor(288)]: globalExecutor=java.util.concurrent.ThreadPoolExecutor@6b2ab7[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], maxSize=4
+2015-11-10 16:40:46,204 [ERROR][org.jppf.comm.discovery.JPPFBroadcaster.run(133)]: No route to host: Datagram send failed
+java.net.NoRouteToHostException: No route to host: Datagram send failed
+	at java.net.TwoStacksPlainDatagramSocketImpl.send(Native Method)
+	at java.net.DatagramSocket.send(DatagramSocket.java:676)
+	at org.jppf.comm.discovery.JPPFBroadcaster.run(JPPFBroadcaster.java:128)
+	at java.lang.Thread.run(Thread.java:744)
+2015-11-10 16:40:46,204 [ERROR][org.jppf.comm.discovery.JPPFBroadcaster.run(133)]: No route to host: Datagram send failed
+java.net.NoRouteToHostException: No route to host: Datagram send failed
+	at java.net.TwoStacksPlainDatagramSocketImpl.send(Native Method)
+	at java.net.DatagramSocket.send(DatagramSocket.java:676)
+	at org.jppf.comm.discovery.JPPFBroadcaster.run(JPPFBroadcaster.java:128)
+	at java.lang.Thread.run(Thread.java:744)
